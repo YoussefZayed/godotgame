@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-@export var speed = 300.0
+@export var speed = 200.0
 var direction = Vector2.ZERO
-#const JUMP_VELOCITY = -400.0
+@onready var anim = $AnimatedSprite2D
 
 func _process(delta):
 	var velocity = Vector2.ZERO
@@ -11,17 +11,44 @@ func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		direction = Vector2.RIGHT
+		#anim.play("walk_side");
+		#anim.flip_h = false
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		direction = Vector2.LEFT
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-		direction = Vector2.DOWN
+		#anim.play("walk_side");
+		#anim.flip_h = true
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 		direction = Vector2.UP
+		#anim.play("walk_back");
+	if Input.is_action_pressed("move_down"):
+		velocity.y += 1
+		direction = Vector2.DOWN
+		#anim.play("walk_front");
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		if direction == Vector2.UP:
+			anim.play("walk_back")
+		elif direction == Vector2.DOWN:
+			anim.play("walk_front")
+		elif direction == Vector2.LEFT:
+			anim.play("walk_side");
+			anim.flip_h = true
+		else:
+			anim.play("walk_side");
+			anim.flip_h = false
+	else:
+		if direction == Vector2.RIGHT:
+			anim.play("idle_side");
+			anim.flip_h = false
+		elif direction == Vector2.LEFT:
+			anim.play("idle_side");
+			anim.flip_h = true
+		elif direction == Vector2.UP:
+			anim.play("idle_back")
+		else:
+			anim.play("idle_front")
 	
 	position += velocity * delta

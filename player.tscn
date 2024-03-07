@@ -111,6 +111,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_upchg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnpbp")
 }],
 "loop": true,
 "name": &"idle_back",
@@ -128,6 +131,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jkkwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnco5")
 }],
 "loop": true,
 "name": &"idle_front",
@@ -145,6 +151,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2c3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gm1g")
 }],
 "loop": true,
 "name": &"idle_side",
@@ -207,14 +216,17 @@ radius = 13.0
 height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_3w1j7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.1875, 2.1875)
+position = Vector2(-0.249999, 0)
+scale = Vector2(2.15625, 2.1875)
 sprite_frames = SubResource("SpriteFrames_d3nqb")
-animation = &"idle_front"
+animation = &"idle_side"
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_45j3l")
+metadata/_edit_lock_ = true
