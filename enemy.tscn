@@ -1,5 +1,43 @@
-[gd_scene format=3 uid="uid://b58ayxr1nyphe"]
+[gd_scene load_steps=6 format=3 uid="uid://b58ayxr1nyphe"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_mrx5b"]
+[ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_okird"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j16yq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_okird")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljpjc"]
+radius = 354.831
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7amqg"]
+radius = 28.0
 
 [node name="Enemy" type="CharacterBody2D"]
+position = Vector2(258, 100)
+script = ExtResource("1_mrx5b")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3.59375, 4.1442)
+sprite_frames = SubResource("SpriteFrames_j16yq")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_ljpjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7amqg")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
