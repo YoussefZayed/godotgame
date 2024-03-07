@@ -1,5 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://b2kyxark6ubki"]
+[gd_scene load_steps=31 format=3 uid="uid://b2kyxark6ubki"]
 
+[ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://dq3q7g8817gxa" path="res://Neko Office Asset Pack/Characters/cat-office-white-back-idle.png" id="1_hw4bk"]
 [ext_resource type="Texture2D" uid="uid://chp3r06r1ayy0" path="res://Neko Office Asset Pack/Characters/cat-office-white-front-idle.png" id="2_ryql4"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="3_wifs5"]
@@ -202,15 +203,18 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_45j3l"]
-radius = 6.0
-height = 14.0
+radius = 13.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3w1j7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.1875, 2.1875)
 sprite_frames = SubResource("SpriteFrames_d3nqb")
 animation = &"idle_front"
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_45j3l")
