@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://b58ayxr1nyphe"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_mrx5b"]
-[ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_okird"]
+[ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_qd53w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j16yq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_okird")
+"texture": ExtResource("2_qd53w")
 }],
 "loop": true,
 "name": &"default",

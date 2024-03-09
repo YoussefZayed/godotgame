@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-
 @export var speed = 200.0
 var direction = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
+@onready var weapon = $WeaponAnimation
 
 func _process(delta):
 	var velocity = Vector2.ZERO
@@ -11,22 +11,17 @@ func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 		direction = Vector2.RIGHT
-		#anim.play("walk_side");
-		#anim.flip_h = false
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 		direction = Vector2.LEFT
-		#anim.play("walk_side");
-		#anim.flip_h = true
 	if Input.is_action_pressed("move_up"):
 		velocity.y -= 1
 		direction = Vector2.UP
-		#anim.play("walk_back");
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
 		direction = Vector2.DOWN
-		#anim.play("walk_front");
 	
+	# Dictate all the animations
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		if direction == Vector2.UP:
@@ -52,3 +47,6 @@ func _process(delta):
 			anim.play("idle_front")
 	
 	position += velocity * delta
+	
+	if Input.is_action_just_pressed("attack_melee"):
+		weapon.play()
