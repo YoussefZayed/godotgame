@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b58ayxr1nyphe"]
+[gd_scene load_steps=8 format=3 uid="uid://b58ayxr1nyphe"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_mrx5b"]
 [ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_qd53w"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_omj4r"]
-bounce = 0.55
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6iw1c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j16yq"]
 animations = [{
@@ -18,27 +17,26 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljpjc"]
-radius = 227.009
+radius = 225.002
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nef8j"]
-radius = 30.1496
+[sub_resource type="CircleShape2D" id="CircleShape2D_7amqg"]
+radius = 28.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g7k4e"]
 radius = 29.0
 height = 64.0
 
 [node name="Enemy" type="RigidBody2D"]
-position = Vector2(14, 2)
+position = Vector2(15, 5)
 collision_layer = 2
 collision_mask = 2
 mass = 0.49
-physics_material_override = SubResource("PhysicsMaterial_omj4r")
+physics_material_override = SubResource("PhysicsMaterial_6iw1c")
 gravity_scale = 0.0
 lock_rotation = true
 max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_mrx5b")
-knockbackForce = 100
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -55,7 +53,8 @@ metadata/_edit_lock_ = true
 shape = SubResource("CircleShape2D_ljpjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_nef8j")
+shape = SubResource("CircleShape2D_7amqg")
+metadata/_edit_lock_ = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 

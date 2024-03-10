@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3kbp6onkj4s"]
+[gd_scene load_steps=7 format=3 uid="uid://cj2nu5l0c6bfn"]
 
 [ext_resource type="PackedScene" uid="uid://cyqpd2yyfbeu1" path="res://player.tscn" id="1_68djj"]
 [ext_resource type="Script" path="res://main.gd" id="1_gxqbk"]
@@ -788,7 +788,7 @@ layer_0/tile_data = PackedInt32Array(65536, 720896, 6, 131072, 720896, 7, 196608
 
 [node name="Enemy" parent="." instance=ExtResource("2_cvpt6")]
 position = Vector2(817, 256)
-knockbackForce = null
+speed = 75
 
 [node name="Player" parent="." instance=ExtResource("1_68djj")]
 position = Vector2(258, 391)

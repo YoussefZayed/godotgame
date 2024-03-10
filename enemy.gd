@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var speed = 75
-@export var knockbackForce =20
+@export var knockbackForce = 100
 var player_chase = false
 var player = null
 var health = 10
