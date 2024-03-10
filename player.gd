@@ -1,10 +1,18 @@
-extends CharacterBody2D
+extends RigidBody2D
+class_name Player
 
 @export var speed = 200.0
+@export var health = 100
 var direction = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
 @onready var weapAnim = $AnimationPlayer
 @onready var weapon = $Weapon
+
+
+func playerHit(amount): 
+	health -= amount
+
+	
 
 func _ready():
 	weapon.visible = false
@@ -49,8 +57,8 @@ func _process(delta):
 			anim.play("idle_back")
 		else:
 			anim.play("idle_front")
-	
-	position += velocity * delta
+	if velocity != Vector2.ZERO:
+		position += velocity * delta
 	
 	if Input.is_action_just_pressed("attack_melee"):
 		weapon.visible = true
