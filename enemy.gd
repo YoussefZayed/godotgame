@@ -1,8 +1,9 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 @export var speed = 100
 var player_chase = false
 var player = null
+var health = 10
 
 
 func _physics_process(delta):
@@ -22,3 +23,9 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	player = null
 	player_chase = false
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "Ruler":
+		health = health - 3
+		print(health)

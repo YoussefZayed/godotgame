@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b58ayxr1nyphe"]
+[gd_scene load_steps=7 format=3 uid="uid://b58ayxr1nyphe"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_mrx5b"]
 [ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_qd53w"]
@@ -20,26 +20,42 @@ radius = 354.831
 [sub_resource type="CircleShape2D" id="CircleShape2D_7amqg"]
 radius = 28.0
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g7k4e"]
+radius = 29.0
+height = 64.0
+
+[node name="Enemy" type="RigidBody2D"]
 position = Vector2(258, 100)
 collision_layer = 2
 collision_mask = 2
+gravity_scale = 0.0
 script = ExtResource("1_mrx5b")
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.59375, 4.1442)
 sprite_frames = SubResource("SpriteFrames_j16yq")
+metadata/_edit_lock_ = true
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_ljpjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7amqg")
+metadata/_edit_lock_ = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_g7k4e")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
