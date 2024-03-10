@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var speed = 75
-@export var knockbackForce = 20
+@export var knockbackForce =20
 var player_chase = false
 var player = null
 var health = 10
@@ -19,20 +19,15 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = false
 
 
+
 func _on_detection_area_body_entered(body):
 	player = body
 	player_chase = true
+	
 
-
-#func _on_detection_area_body_exited(body):
+#func _on_detection_area_body_exited(_body):
 	#player = null
 	#player_chase = false
-
-
-func _on_hurt_box_area_entered(area):
-	if area.name == "Ruler":
-		health = health - 3
-		print(health)
 
 
 func _on_body_entered(body):
@@ -42,3 +37,10 @@ func _on_body_entered(body):
 		var knockBack = (player.position - position).normalized()
 		apply_impulse(-knockBack * knockbackForce)
 		body.playerHit(5)
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "Ruler":
+		health = health - 3
+		print(health)
+

@@ -13,6 +13,12 @@ signal enemy_hit(damage, body)
 func playerHit(amount): 
 	health -= amount
 
+
+func playerHit(amount): 
+	health -= amount
+
+	
+
 func _ready():
 	weapon.visible = false
 	weaponCollision.set_deferred("disabled", true)

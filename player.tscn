@@ -1,14 +1,16 @@
-[gd_scene load_steps=39 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=41 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="PackedScene" uid="uid://cxm0c1vffj4mw" path="res://ruler.tscn" id="7_3vr35"]
 [ext_resource type="Texture2D" uid="uid://dq3q7g8817gxa" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-idle.png" id="7_us4ev"]
 [ext_resource type="Texture2D" uid="uid://chp3r06r1ayy0" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-idle.png" id="8_rwtos"]
+[ext_resource type="Script" path="res://ProgressBar.gd" id="8_tf008"]
 [ext_resource type="Texture2D" uid="uid://buiq8dnonook3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-walk.png" id="9_tg4j6"]
 [ext_resource type="Texture2D" uid="uid://nb5irm6djsjp" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-walk.png" id="10_h67hk"]
 [ext_resource type="Texture2D" uid="uid://cgk5hqi08dlxv" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-walk.png" id="11_3fmfk"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qgpni"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_08lkk"]
+bounce = 0.3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
 atlas = ExtResource("7_us4ev")
@@ -366,9 +368,16 @@ _data = {
 "ruler_attack_right": SubResource("Animation_oddlr")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb7vf"]
+bg_color = Color(0.952941, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Player" type="RigidBody2D"]
 collision_layer = 3
-physics_material_override = SubResource("PhysicsMaterial_qgpni")
+physics_material_override = SubResource("PhysicsMaterial_08lkk")
 gravity_scale = 0.0
 script = ExtResource("1_3w1j7")
 
@@ -400,3 +409,12 @@ zoom = Vector2(1.5, 1.5)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+[node name="ProgressBar" type="ProgressBar" parent="Camera2D"]
+offset_left = -339.0
+offset_top = -205.0
+offset_right = -201.0
+offset_bottom = -178.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_mb7vf")
+value = 60.0
+show_percentage = false
+script = ExtResource("8_tf008")
