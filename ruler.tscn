@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxm0c1vffj4mw"]
+
+[ext_resource type="Texture2D" uid="uid://blc4fycotnhrp" path="res://all art/ruler animations - emily/ruler1.png" id="1_5nc5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok5kk"]
+size = Vector2(8.5, 28)
+
+[node name="Ruler" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.122984, 0.117886)
+texture = ExtResource("1_5nc5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -11)
+shape = SubResource("RectangleShape2D_ok5kk")

@@ -1,45 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=38 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
+[ext_resource type="PackedScene" uid="uid://cxm0c1vffj4mw" path="res://ruler.tscn" id="7_3vr35"]
 [ext_resource type="Texture2D" uid="uid://dq3q7g8817gxa" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-idle.png" id="7_us4ev"]
-[ext_resource type="Texture2D" uid="uid://blc4fycotnhrp" path="res://all art/ruler animations - emily/ruler1.png" id="8_dsyiy"]
 [ext_resource type="Texture2D" uid="uid://chp3r06r1ayy0" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-idle.png" id="8_rwtos"]
 [ext_resource type="Texture2D" uid="uid://buiq8dnonook3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-walk.png" id="9_tg4j6"]
-[ext_resource type="Texture2D" uid="uid://djskb3obg3ffw" path="res://all art/ruler animations - emily/ruler2.png" id="9_xhtqx"]
 [ext_resource type="Texture2D" uid="uid://nb5irm6djsjp" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-walk.png" id="10_h67hk"]
-[ext_resource type="Texture2D" uid="uid://bwvign4odcbt7" path="res://all art/ruler animations - emily/ruler3.png" id="10_rf0xe"]
 [ext_resource type="Texture2D" uid="uid://cgk5hqi08dlxv" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-walk.png" id="11_3fmfk"]
-[ext_resource type="Texture2D" uid="uid://ddnbab70djia4" path="res://all art/ruler animations - emily/ruler 4.png" id="11_usgcg"]
-[ext_resource type="Texture2D" uid="uid://cwss8nq6wmixw" path="res://all art/ruler animations - emily/ruler5.png" id="12_id0n7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pq0vw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_dsyiy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_xhtqx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_dsyiy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_rf0xe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_usgcg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_id0n7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_dsyiy")
-}],
-"loop": false,
-"name": &"swing",
-"speed": 6.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
 atlas = ExtResource("7_us4ev")
@@ -249,29 +216,177 @@ animations = [{
 radius = 13.0
 height = 28.0
 
+[sub_resource type="Animation" id="Animation_n45ra"]
+resource_name = "ruler_attack_front"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0944, 4.18879]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(11, 13), Vector2(0, 18), Vector2(-11, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_pi1nx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_028mt"]
+resource_name = "ruler_attack_back"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.0472, 1.0472]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-11, -8), Vector2(0, -14), Vector2(11, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_oddlr"]
+resource_name = "ruler_attack_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.523599, 2.61799]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(10, -10), Vector2(15, 0), Vector2(10, 14)]
+}
+
+[sub_resource type="Animation" id="Animation_6u8x4"]
+resource_name = "ruler_attack_left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.66519, 5.75959]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, 14), Vector2(-15, 0), Vector2(-10, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c8h7t"]
+_data = {
+"RESET": SubResource("Animation_pi1nx"),
+"ruler_attack_back": SubResource("Animation_028mt"),
+"ruler_attack_front": SubResource("Animation_n45ra"),
+"ruler_attack_left": SubResource("Animation_6u8x4"),
+"ruler_attack_right": SubResource("Animation_oddlr")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_3w1j7")
-
-[node name="WeaponAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(-12.2796, 18.6691)
-rotation = 0.506145
-scale = Vector2(0.0908408, 0.0879088)
-sprite_frames = SubResource("SpriteFrames_pq0vw")
-animation = &"swing"
-frame = 6
-frame_progress = 1.0
-flip_h = true
-flip_v = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.249999, 0)
 scale = Vector2(2.15625, 2.1875)
 sprite_frames = SubResource("SpriteFrames_d3nqb")
-animation = &"idle_back"
+animation = &"idle_side"
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_45j3l")
 metadata/_edit_lock_ = true
+
+[node name="Weapon" type="Node2D" parent="."]
+position = Vector2(11, 13)
+rotation = 2.0944
+
+[node name="Ruler" parent="Weapon" instance=ExtResource("7_3vr35")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c8h7t")
+}
