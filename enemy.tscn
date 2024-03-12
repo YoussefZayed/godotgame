@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b58ayxr1nyphe"]
+[gd_scene load_steps=16 format=3 uid="uid://b58ayxr1nyphe"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_mrx5b"]
+[ext_resource type="PackedScene" uid="uid://dnm81nrfbceud" path="res://coin.tscn" id="2_08e7t"]
 [ext_resource type="Texture2D" uid="uid://bfvvq1krkdden" path="res://all art/explosion animations - emily/explosion1.png" id="2_idqwj"]
 [ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_qd53w"]
 [ext_resource type="Texture2D" uid="uid://dul0dfr4hjpcw" path="res://all art/explosion animations - emily/explosion2.png" id="3_hw7ig"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cg704e3q3xwrd" path="res://all art/explosion animations - emily/explosion4.png" id="5_3sx4a"]
 [ext_resource type="Texture2D" uid="uid://benndmddp3t2f" path="res://all art/explosion animations - emily/explosion5.png" id="6_bl6uc"]
 [ext_resource type="Texture2D" uid="uid://wbcsvy88yw70" path="res://all art/explosion animations - emily/explosion6.png" id="7_b1wcp"]
+[ext_resource type="Texture2D" uid="uid://cbd6jaa7p6sgk" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121(2).png" id="9_eay28"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6iw1c"]
 
@@ -37,12 +39,15 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("2_qd53w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eay28")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljpjc"]
@@ -66,11 +71,13 @@ lock_rotation = true
 max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_mrx5b")
+coin = ExtResource("2_08e7t")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.59375, 4.1442)
 sprite_frames = SubResource("SpriteFrames_j16yq")
+frame_progress = 0.145451
 metadata/_edit_lock_ = true
 
 [node name="DetectionArea" type="Area2D" parent="."]

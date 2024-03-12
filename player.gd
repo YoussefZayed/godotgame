@@ -2,6 +2,8 @@ extends RigidBody2D
 class_name Player
 
 @export var speed = 200.0
+@export var maxHealth = 100
+@export var money = 0
 @export var health = 100
 var direction = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
@@ -12,6 +14,10 @@ signal enemy_hit(damage, body)
 
 func playerHit(amount): 
 	health -= amount
+	
+func collectMoney(amount):
+	money += amount
+	return money
 
 func _ready():
 	weapon.visible = false
