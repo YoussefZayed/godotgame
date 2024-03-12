@@ -26,8 +26,9 @@ func enemyHit(damage):
 
 func death():
 	player_chase = false
-	#get_node("AnimatedSpraite2D").play("Death")
-	#await get_node("AnimatedSprite2D").animation_finished
+	set_sleeping(true)
+	get_node("AnimatedSprite2D").play("death")
+	await get_node("AnimatedSprite2D").animation_finished
 	self.queue_free()
 
 func _on_detection_area_body_entered(body):
