@@ -26,6 +26,7 @@ func _physics_process(delta):
 
 func enemyHit(damage):
 	health -= damage
+	$EnemyHurt.play()
 	
 func spawnCoin():
 	if !spawnedCoin :
@@ -36,12 +37,14 @@ func spawnCoin():
 		
 
 func death():
+	$EnemyDeath.play()
 	player_chase = false
 	set_sleeping(true)
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnCoin()
 	self.queue_free()
+	
 
 func _on_detection_area_body_entered(body):
 	player = body

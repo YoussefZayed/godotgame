@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b58ayxr1nyphe"]
+[gd_scene load_steps=18 format=3 uid="uid://b58ayxr1nyphe"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_mrx5b"]
 [ext_resource type="PackedScene" uid="uid://dnm81nrfbceud" path="res://coin.tscn" id="2_08e7t"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://benndmddp3t2f" path="res://all art/explosion animations - emily/explosion5.png" id="6_bl6uc"]
 [ext_resource type="Texture2D" uid="uid://wbcsvy88yw70" path="res://all art/explosion animations - emily/explosion6.png" id="7_b1wcp"]
 [ext_resource type="Texture2D" uid="uid://cbd6jaa7p6sgk" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121(2).png" id="9_eay28"]
+[ext_resource type="AudioStream" uid="uid://cp7mqp8c7eci6" path="res://all art/sounds effects/enemyHurt.wav" id="11_xo8n3"]
+[ext_resource type="AudioStream" uid="uid://c6e34ffta2ayn" path="res://all art/sounds effects/enemyDeath.wav" id="12_q7cf3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6iw1c"]
 
@@ -97,6 +99,13 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_g7k4e")
+
+[node name="EnemyHurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_xo8n3")
+
+[node name="EnemyDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_q7cf3")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

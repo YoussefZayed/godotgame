@@ -14,8 +14,10 @@ signal enemy_hit(damage, body)
 
 func playerHit(amount): 
 	health -= amount
+	$PlayerHurt.play()
 	
 func collectMoney(amount):
+	$PickupCoin.play()
 	money += amount
 	return money
 
