@@ -17,9 +17,18 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
+	
+	if self.health <= 0:
+		self.death()
 
 func enemyHit(damage):
 	health -= damage
+
+func death():
+	player_chase = false
+	#get_node("AnimatedSpraite2D").play("Death")
+	#await get_node("AnimatedSprite2D").animation_finished
+	self.queue_free()
 
 func _on_detection_area_body_entered(body):
 	player = body
@@ -33,16 +42,16 @@ func _on_detection_area_body_entered(body):
 
 func _on_body_entered(body):
 	if body is Player:
-		print("Player HIT Player health is: ")
-		print(body.health)
 		var knockBack = (player.position - position).normalized()
 		apply_impulse(-knockBack * knockbackForce)
 		body.playerHit(5)
+		print("Player HIT Player health is: ")
+		print(body.health)
 
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "Ruler":
-		enemyHit(3)
+		self.enemyHit(3)
 		print("Enemy health: ", health)
 		var knockBack = (player.position - position).normalized()
 		apply_impulse(-knockBack * knockbackForce)
