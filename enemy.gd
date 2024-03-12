@@ -18,7 +18,8 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.flip_h = false
 
-
+func enemyHit(damage):
+	health -= damage
 
 func _on_detection_area_body_entered(body):
 	player = body
@@ -41,6 +42,8 @@ func _on_body_entered(body):
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "Ruler":
-		health = health - 3
-		print(health)
+		enemyHit(3)
+		print("Enemy health: ", health)
+		var knockBack = (player.position - position).normalized()
+		apply_impulse(-knockBack * knockbackForce)
 
