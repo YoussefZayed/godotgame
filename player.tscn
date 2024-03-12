@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=41 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -10,8 +10,6 @@
 [ext_resource type="Script" path="res://CoinAmountLabel.gd" id="10_1bqbl"]
 [ext_resource type="Texture2D" uid="uid://nb5irm6djsjp" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-walk.png" id="10_h67hk"]
 [ext_resource type="Texture2D" uid="uid://cgk5hqi08dlxv" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-walk.png" id="11_3fmfk"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qgpni"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
 atlas = ExtResource("7_us4ev")
@@ -370,10 +368,8 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_ktiju"]
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 3
-physics_material_override = SubResource("PhysicsMaterial_qgpni")
-gravity_scale = 0.0
 script = ExtResource("1_3w1j7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
