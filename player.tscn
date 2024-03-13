@@ -379,6 +379,7 @@ position = Vector2(-0.249999, 0)
 scale = Vector2(2.15625, 2.1875)
 sprite_frames = SubResource("SpriteFrames_d3nqb")
 animation = &"idle_side"
+frame_progress = 0.887927
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

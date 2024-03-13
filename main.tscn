@@ -776,3 +776,4 @@ collision_mask = 1
 
 [node name="Player" parent="." instance=ExtResource("1_68djj")]
 position = Vector2(258, 391)
+motion_mode = 1
