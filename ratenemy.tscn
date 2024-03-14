@@ -1,0 +1,106 @@
+[gd_scene load_steps=17 format=3 uid="uid://cyc2xge3qnmw3"]
+
+[ext_resource type="Script" path="res://ratenemy.gd" id="1_wjtyh"]
+[ext_resource type="PackedScene" uid="uid://dnm81nrfbceud" path="res://coin.tscn" id="2_cldfv"]
+[ext_resource type="Texture2D" uid="uid://bfvvq1krkdden" path="res://all art/explosion animations - emily/explosion1.png" id="3_1ravh"]
+[ext_resource type="Texture2D" uid="uid://dul0dfr4hjpcw" path="res://all art/explosion animations - emily/explosion2.png" id="4_e82sw"]
+[ext_resource type="Texture2D" uid="uid://dgkwj8bns7851" path="res://all art/explosion animations - emily/explosion3.png" id="5_050er"]
+[ext_resource type="Texture2D" uid="uid://cg704e3q3xwrd" path="res://all art/explosion animations - emily/explosion4.png" id="6_10s4m"]
+[ext_resource type="Texture2D" uid="uid://benndmddp3t2f" path="res://all art/explosion animations - emily/explosion5.png" id="7_eq7xd"]
+[ext_resource type="Texture2D" uid="uid://wbcsvy88yw70" path="res://all art/explosion animations - emily/explosion6.png" id="8_60xwi"]
+[ext_resource type="Texture2D" uid="uid://pnjg2uf3328t" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0123.png" id="9_vl37x"]
+[ext_resource type="AudioStream" uid="uid://cp7mqp8c7eci6" path="res://all art/sounds effects/enemyHurt.wav" id="11_yb7e4"]
+[ext_resource type="AudioStream" uid="uid://c6e34ffta2ayn" path="res://all art/sounds effects/enemyDeath.wav" id="12_kpa6x"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6iw1c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j16yq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ravh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e82sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_050er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_10s4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eq7xd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_60xwi")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vl37x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljpjc"]
+radius = 225.002
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7amqg"]
+radius = 17.0294
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g7k4e"]
+radius = 16.0
+height = 32.0
+
+[node name="Rat" type="RigidBody2D"]
+position = Vector2(15, 5)
+collision_layer = 2
+mass = 0.37
+physics_material_override = SubResource("PhysicsMaterial_6iw1c")
+gravity_scale = 0.0
+lock_rotation = true
+max_contacts_reported = 4
+contact_monitor = true
+script = ExtResource("1_wjtyh")
+coin = ExtResource("2_cldfv")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_j16yq")
+metadata/_edit_lock_ = true
+
+[node name="DetectionArea" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_ljpjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7amqg")
+metadata/_edit_lock_ = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CapsuleShape2D_g7k4e")
+
+[node name="EnemyHurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_yb7e4")
+
+[node name="EnemyDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_kpa6x")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
