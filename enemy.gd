@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var knockbackForce = 100
 var player_chase = false
 var player = null
-var health = 10
+var health = 30
 var spawnedCoin = false
 var isDieing = false
 @export var coin: PackedScene
@@ -72,7 +72,7 @@ func _on_body_entered(body):
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "Ruler":
-		self.enemyHit(3)
+		self.enemyHit(10)
 		print("Enemy health: ", health)
 		knockedBack()
 
