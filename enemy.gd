@@ -6,6 +6,7 @@ var player_chase = false
 var player = null
 var health = 10
 var spawnedCoin = false
+var isDieing = false
 @export var coin: PackedScene
 
 
@@ -21,7 +22,8 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.flip_h = false
 	
-	if self.health <= 0:
+	if self.health <= 0 && !isDieing:
+		isDieing = true
 		self.death()
 
 func enemyHit(damage):
