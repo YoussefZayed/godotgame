@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://biate50xv4xfw"]
+[gd_scene load_steps=5 format=3 uid="uid://b62i5odp8bp7"]
 
 [ext_resource type="Texture2D" uid="uid://bkdk5xi24882p" path="res://all art/Neko Office Asset Pack/neko-office-tileset.png" id="1_jbdgj"]
 [ext_resource type="PackedScene" uid="uid://b58ayxr1nyphe" path="res://enemy.tscn" id="2_1nkth"]

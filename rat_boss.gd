@@ -6,7 +6,7 @@ var bossBattle = false
 var isDead = false
 signal spawnRats(player)
 
-@export var timer_secs = 5
+@export var timer_secs = 6
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
@@ -33,7 +33,7 @@ func _on_hurt_area_entered(area):
 
 func _on_spawn_rats_timeout():
 	if (!isDead):
-		$spawnRats.start(timer_secs * (health/300) + 1.5)
+		$spawnRats.start(timer_secs * (health/300) + 1.75)
 		emit_signal("spawnRats", player)
 
 

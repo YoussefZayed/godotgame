@@ -68,6 +68,7 @@ lock_rotation = true
 max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_wjtyh")
+speed = 200
 coin = ExtResource("2_cldfv")
 metadata/_edit_group_ = true
 
