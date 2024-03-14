@@ -1,19 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj2nu5l0c6bfn"]
+[gd_scene load_steps=4 format=3 uid="uid://cj2nu5l0c6bfn"]
 
 [ext_resource type="PackedScene" uid="uid://cyqpd2yyfbeu1" path="res://player.tscn" id="1_68djj"]
 [ext_resource type="Script" path="res://main.gd" id="1_gxqbk"]
 [ext_resource type="PackedScene" uid="uid://b62i5odp8bp7" path="res://room_a.tscn" id="2_crmue"]
-[ext_resource type="PackedScene" uid="uid://b58ayxr1nyphe" path="res://enemy.tscn" id="2_cvpt6"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gxqbk")
 
 [node name="RoomA" parent="." instance=ExtResource("2_crmue")]
-
-[node name="Enemy" parent="." instance=ExtResource("2_cvpt6")]
-position = Vector2(817, 256)
-collision_layer = 1
-collision_mask = 1
 
 [node name="Player" parent="." instance=ExtResource("1_68djj")]
 position = Vector2(258, 391)
