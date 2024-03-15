@@ -3,9 +3,11 @@ extends Node2D
 var player = null
 var health = 300
 var bossBattle = false
+var spawnedRuby = false
 var isDead = false
 signal spawnRats(player)
 
+var ruby = preload("res://ruby.tscn")
 @export var timer_secs = 6
 
 func _ready():
@@ -13,13 +15,21 @@ func _ready():
 	
 func _process(delta):
 	if (health <= 0 && !isDead):
-		die()
+		self.die()
+
+#func spawnRuby():
+	#if !spawnedRuby :
+		#spawnedRuby = true
+		#var newRuby = ruby.instantiate()
+		#newRuby.position = self.positions
+		#get_parent().add_child(newRuby)
 
 func die():
 	isDead = true
 	$EnemyDeath.play()
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
+	#spawnRuby()
 	self.queue_free()
 	print("Queue freed")
 
