@@ -4,14 +4,14 @@ extends RigidBody2D
 @export var knockbackForce = 100
 var player_chase = false
 var player = null
-var health = 30
+var health = 20
 var spawnedCoin = false
 var isDieing = false
-@export var coin: PackedScene
+@export var coin = preload("res://coin.tscn")
 
 
 func _physics_process(delta):
-	if player_chase:
+	if player_chase and !isDieing:
 		get_node("AnimatedSprite2D").play("default")
 		var distance = player.position - position
 		var direction = (distance).normalized()

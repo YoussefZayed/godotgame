@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://b58ayxr1nyphe"]
 
-[ext_resource type="Script" path="res://ratenemy.gd" id="1_vahrc"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_j0sad"]
 [ext_resource type="Texture2D" uid="uid://bfvvq1krkdden" path="res://all art/explosion animations - emily/explosion1.png" id="2_idqwj"]
 [ext_resource type="Texture2D" uid="uid://bvq0r8bl4pgng" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0121.png" id="2_qd53w"]
 [ext_resource type="Texture2D" uid="uid://dul0dfr4hjpcw" path="res://all art/explosion animations - emily/explosion2.png" id="3_hw7ig"]
@@ -69,7 +69,7 @@ gravity_scale = 0.0
 lock_rotation = true
 max_contacts_reported = 4
 contact_monitor = true
-script = ExtResource("1_vahrc")
+script = ExtResource("1_j0sad")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
