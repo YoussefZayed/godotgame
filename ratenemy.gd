@@ -11,7 +11,7 @@ var isDieing = false
 
 
 func _physics_process(delta):
-	if player_chase:
+	if player_chase and !isDieing:
 		get_node("AnimatedSprite2D").play("default")
 		var distance = player.position - position
 		var direction = distance.normalized()
