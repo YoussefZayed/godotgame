@@ -64,7 +64,7 @@ func knockedBack():
 func _on_body_entered(body):
 	if body is Player:
 		knockedBack()
-		body.playerHit(5)
+		body.playerHit(2)
 		print("Player HIT Player health is: ")
 		print(body.health)
 
