@@ -7,7 +7,7 @@ var player = null
 var health = 1
 var spawnedCoin = false
 var isDieing = false
-@export var coin: PackedScene
+@export var coin = preload("res://coin.tscn")
 
 
 func _physics_process(delta):
