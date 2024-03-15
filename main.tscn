@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj2nu5l0c6bfn"]
+[gd_scene load_steps=5 format=3 uid="uid://cj2nu5l0c6bfn"]
 
 [ext_resource type="PackedScene" uid="uid://cyqpd2yyfbeu1" path="res://player.tscn" id="1_68djj"]
 [ext_resource type="Script" path="res://main.gd" id="1_gxqbk"]
 [ext_resource type="PackedScene" uid="uid://b62i5odp8bp7" path="res://room_a.tscn" id="2_crmue"]
+[ext_resource type="PackedScene" uid="uid://c5cpmvh8uq3c5" path="res://pause.tscn" id="4_jyw7p"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gxqbk")
@@ -10,5 +11,9 @@ script = ExtResource("1_gxqbk")
 [node name="RoomA" parent="." instance=ExtResource("2_crmue")]
 
 [node name="Player" parent="." instance=ExtResource("1_68djj")]
-position = Vector2(544, 892)
+position = Vector2(220, 377)
 motion_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("4_jyw7p")]

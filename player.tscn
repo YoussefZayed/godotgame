@@ -373,7 +373,6 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_3w1j7")
-speed = 499.71
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.249999, 0)
