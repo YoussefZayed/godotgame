@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyc2xge3qnmw3"]
+[gd_scene load_steps=16 format=3 uid="uid://cyc2xge3qnmw3"]
 
 [ext_resource type="Script" path="res://ratenemy.gd" id="1_wjtyh"]
-[ext_resource type="PackedScene" uid="uid://dnm81nrfbceud" path="res://coin.tscn" id="2_cldfv"]
 [ext_resource type="Texture2D" uid="uid://bfvvq1krkdden" path="res://all art/explosion animations - emily/explosion1.png" id="3_1ravh"]
 [ext_resource type="Texture2D" uid="uid://dul0dfr4hjpcw" path="res://all art/explosion animations - emily/explosion2.png" id="4_e82sw"]
 [ext_resource type="Texture2D" uid="uid://dgkwj8bns7851" path="res://all art/explosion animations - emily/explosion3.png" id="5_050er"]
@@ -69,7 +68,6 @@ max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_wjtyh")
 speed = 200
-coin = ExtResource("2_cldfv")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
