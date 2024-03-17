@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-@export var speed = 10
+@export var speed = 50
 @export var knockbackForce = 100
 var player_chase = false
 var player = null
@@ -18,14 +18,17 @@ func _ready():
 func _process(delta):
 	if player_chase and !isDieing:
 		var distance = player.position - position
-		if distance > Vector2(10,10):
-			var direction = (distance).normalized()
-			apply_impulse(direction * speed * delta)
-			position += (player.position - position)/(speed+45)
-			if (player.position.x - position.x) <0:
-				$AnimatedSprite2D.flip_h = true
-			else:
-				$AnimatedSprite2D.flip_h = false
+		var direction = (distance).normalized()
+		if position.distance_to(player.position) <= 150:
+			direction = -direction
+		
+		velocity = direction * speed#
+		move_and_slide()#
+		
+		if (player.position.x - position.x) <0:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 	
 	if self.health <= 0 && !isDieing:
 		isDieing = true
@@ -38,7 +41,8 @@ func enemyHit(damage):
 func death():
 	$EnemyDeath.play()
 	player_chase = false
-	set_sleeping(true)
+	#set_sleeping(true)
+	velocity = Vector2.ZERO
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnCoin()
@@ -58,7 +62,7 @@ func _on_detection_area_body_entered(body):
 
 func knockedBack():
 	var knockBack = (player.position - position).normalized()
-	apply_impulse(-knockBack * knockbackForce)
+	#apply_impulse(-knockBack * knockbackForce)
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "Ruler" && player:

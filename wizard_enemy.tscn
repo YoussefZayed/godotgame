@@ -50,12 +50,12 @@ radius = 21.0
 height = 46.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wsd00"]
-radius = 234.002
+radius = 293.015
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7pmb"]
 size = Vector2(38, 39)
 
-[node name="WizardEnemy" type="RigidBody2D"]
+[node name="WizardEnemy" type="CharacterBody2D"]
 script = ExtResource("1_o00ni")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -91,3 +91,4 @@ stream = ExtResource("10_kce57")
 volume_db = -10.0
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
