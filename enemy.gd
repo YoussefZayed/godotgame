@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var speed = 25
+@export var speed = 18
 @export var knockbackForce = 100
 var player_chase = false
 var player = null
@@ -16,7 +16,7 @@ func _physics_process(delta):
 		var distance = player.position - position
 		var direction = (distance).normalized()
 		apply_impulse(direction * speed * delta)
-		position += (player.position - position)/speed
+		position += (player.position - position)/(speed+45)
 		if (player.position.x - position.x) <0:
 			$AnimatedSprite2D.flip_h = true
 		else:
