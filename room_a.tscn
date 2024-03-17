@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmtojgxla13ty" path="res://all art/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="3_3ojp1"]
 [ext_resource type="Script" path="res://SpawningA.gd" id="5_idi17"]
 [ext_resource type="PackedScene" uid="uid://cyc2xge3qnmw3" path="res://ratenemy.tscn" id="6_0vi4b"]
-[ext_resource type="PackedScene" uid="uid://bstolvxoeua5n" path="res://wizard_enemy.tscn" id="8_6yxby"]
+[ext_resource type="PackedScene" uid="uid://1qxqus3tn5jm" path="res://shop.tscn" id="8_0bsgw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xe6tp"]
 texture = ExtResource("1_jbdgj")
@@ -1584,28 +1584,28 @@ script = ExtResource("5_idi17")
 position = Vector2(574, -453)
 
 [node name="Marker2D2" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2003, -437)
+position = Vector2(2012, -487)
 
 [node name="Marker2D3" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
 position = Vector2(991, -566)
 
 [node name="Marker2D4" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1953, -795)
+position = Vector2(1788, -808)
 
 [node name="Marker2D5" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1840, -171)
+position = Vector2(1760, -164)
 
 [node name="Marker2D6" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
 position = Vector2(1832, -1224)
 
 [node name="Marker2D7" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2795, -1019)
+position = Vector2(2728, -1136)
 
 [node name="Marker2D8" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1791, 629)
+position = Vector2(1829, 786)
 
 [node name="Marker2D9" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2655, 470)
+position = Vector2(2651, 282)
 
 [node name="Marker2D10" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
 position = Vector2(2832, 726)
@@ -1617,40 +1617,10 @@ position = Vector2(4435, 701)
 position = Vector2(4495, 373)
 
 [node name="Marker2D13" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3719, -270)
+position = Vector2(3719, -151)
 
 [node name="Marker2D14" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3846, 333)
-
-[node name="Marker2D15" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1782, -640)
-
-[node name="Marker2D16" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(898, -384)
-
-[node name="Marker2D17" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2085, 716)
-
-[node name="Marker2D18" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1860, 886)
-
-[node name="Marker2D19" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2796, 292)
-
-[node name="Marker2D20" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2182, -1248)
-
-[node name="Marker2D21" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2667, -1203)
-
-[node name="Marker2D22" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2600, -480)
-
-[node name="Marker2D23" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3381, 315)
-
-[node name="Marker2D24" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3650, 148)
+position = Vector2(3613, 333)
 
 [node name="NonRandomEnemies" type="Node" parent="SpawningA"]
 
@@ -1663,5 +1633,5 @@ position = Vector2(607, 383)
 [node name="Rat2" parent="SpawningA/NonRandomEnemies" instance=ExtResource("6_0vi4b")]
 position = Vector2(545, 594)
 
-[node name="WizardEnemy" parent="SpawningA/NonRandomEnemies" instance=ExtResource("8_6yxby")]
-position = Vector2(1055, 99)
+[node name="Shop" parent="." instance=ExtResource("8_0bsgw")]
+position = Vector2(4196, -266)
