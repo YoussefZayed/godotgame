@@ -15,11 +15,15 @@ signal enemy_hit(damage, body)
 func playerHit(amount): 
 	health -= amount
 	$PlayerHurt.play()
+	#if health
 	
 func collectMoney(amount):
 	$PickupCoin.play()
 	money += amount
 	return money
+
+func death():
+	print("Player is dead")
 
 func _ready():
 	weapon.visible = false

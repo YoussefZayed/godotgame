@@ -14,7 +14,7 @@ func _ready():
 		var num = randi_range(0,spawnCounts-1)
 		var spawnLocations = spawns[num]
 		
-		if spawnCounts > 8:
+		if spawnCounts > 13:
 			newEnemy = ghostEnemy.instantiate()
 		else:
 			newEnemy = ratEnemy.instantiate()
