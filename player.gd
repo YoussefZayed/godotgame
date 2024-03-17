@@ -17,8 +17,7 @@ signal enemy_hit(damage, body)
 func playerHit(amount): 
 	health -= amount
 	$PlayerHurt.play()
-	if health <= 0:
-		self.death()
+	#if health
 	
 func collectMoney(amount):
 	$PickupCoin.play()
