@@ -11,9 +11,10 @@ script = ExtResource("1_gxqbk")
 [node name="RoomA" parent="." instance=ExtResource("2_crmue")]
 
 [node name="Player" parent="." instance=ExtResource("1_68djj")]
-position = Vector2(220, 377)
+position = Vector2(544, 877)
 motion_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("4_jyw7p")]
+metadata/_edit_lock_ = true
