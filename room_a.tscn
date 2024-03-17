@@ -1583,28 +1583,28 @@ script = ExtResource("5_idi17")
 position = Vector2(574, -453)
 
 [node name="Marker2D2" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2003, -437)
+position = Vector2(2012, -487)
 
 [node name="Marker2D3" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
 position = Vector2(991, -566)
 
 [node name="Marker2D4" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1953, -795)
+position = Vector2(1788, -808)
 
 [node name="Marker2D5" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1840, -171)
+position = Vector2(1760, -164)
 
 [node name="Marker2D6" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
 position = Vector2(1832, -1224)
 
 [node name="Marker2D7" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2795, -1019)
+position = Vector2(2728, -1136)
 
 [node name="Marker2D8" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1791, 629)
+position = Vector2(1829, 786)
 
 [node name="Marker2D9" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2655, 470)
+position = Vector2(2651, 282)
 
 [node name="Marker2D10" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
 position = Vector2(2832, 726)
@@ -1616,40 +1616,10 @@ position = Vector2(4435, 701)
 position = Vector2(4495, 373)
 
 [node name="Marker2D13" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3719, -270)
+position = Vector2(3719, -151)
 
 [node name="Marker2D14" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3846, 333)
-
-[node name="Marker2D15" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1782, -640)
-
-[node name="Marker2D16" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(898, -384)
-
-[node name="Marker2D17" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2085, 716)
-
-[node name="Marker2D18" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(1860, 886)
-
-[node name="Marker2D19" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2796, 292)
-
-[node name="Marker2D20" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2182, -1248)
-
-[node name="Marker2D21" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2667, -1203)
-
-[node name="Marker2D22" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(2600, -480)
-
-[node name="Marker2D23" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3381, 315)
-
-[node name="Marker2D24" type="Marker2D" parent="SpawningA/RandomEnemyLocations"]
-position = Vector2(3650, 148)
+position = Vector2(3613, 333)
 
 [node name="NonRandomEnemies" type="Node" parent="SpawningA"]
 

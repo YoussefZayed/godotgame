@@ -5,11 +5,13 @@ class_name Player
 @export var maxHealth = 100
 @export var money = 0
 @export var health = 100
+@export var damage = 10
 var dir = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
 @onready var weapAnim = $AnimationPlayer
 @onready var weapon = $Weapon
 @onready var weaponCollision = $Weapon/Ruler/CollisionShape2D
+
 signal enemy_hit(damage, body)
 
 func playerHit(amount): 

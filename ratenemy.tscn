@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://c6e34ffta2ayn" path="res://all art/sounds effects/enemyDeath.wav" id="12_kpa6x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6iw1c"]
+bounce = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j16yq"]
 animations = [{
@@ -60,7 +61,7 @@ height = 32.0
 [node name="Rat" type="RigidBody2D"]
 position = Vector2(15, 5)
 collision_layer = 2
-mass = 0.37
+mass = 0.51
 physics_material_override = SubResource("PhysicsMaterial_6iw1c")
 gravity_scale = 0.0
 lock_rotation = true

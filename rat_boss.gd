@@ -34,9 +34,9 @@ func die():
 	print("Queue freed")
 
 func _on_hurt_area_entered(area):
-	if area.name == "Ruler":
+	if area.name == "Ruler" && player:
+		health -=  player.damage
 		$EnemyHurt.play()
-		health -= 10
 		print("Boss health: ", health)
 		
 

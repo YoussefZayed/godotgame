@@ -71,8 +71,8 @@ func _on_body_entered(body):
 
 
 func _on_hurt_box_area_entered(area):
-	if area.name == "Ruler":
-		self.enemyHit(10)
+	if area.name == "Ruler" && player:
+		self.enemyHit(player.damage)
 		print("Enemy health: ", health)
 		knockedBack()
 
