@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	if player_chase and !isDieing:
 		var distance = player.position - position
-		if distance > 10:
+		if distance > Vector2(10,10):
 			var direction = (distance).normalized()
 			apply_impulse(direction * speed * delta)
 			position += (player.position - position)/(speed+45)
