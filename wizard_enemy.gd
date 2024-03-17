@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 50
-@export var knockbackForce = 100
+@export var speed = 75
+@export var knockbackForce = 25
 var player_chase = false
 var player = null
 var health = 30
@@ -41,7 +41,6 @@ func enemyHit(damage):
 func death():
 	$EnemyDeath.play()
 	player_chase = false
-	#set_sleeping(true)
 	velocity = Vector2.ZERO
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
@@ -61,8 +60,10 @@ func _on_detection_area_body_entered(body):
 		player_chase = true
 
 func knockedBack():
-	var knockBack = (player.position - position).normalized()
-	#apply_impulse(-knockBack * knockbackForce)
+	var knockbackDirection = player.position.direction_to(self.position)
+	var knockback = knockbackDirection * knockbackForce
+	global_position += knockback
+	move_and_slide()
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "Ruler" && player:
