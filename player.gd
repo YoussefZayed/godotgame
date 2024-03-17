@@ -17,7 +17,8 @@ signal enemy_hit(damage, body)
 func playerHit(amount): 
 	health -= amount
 	$PlayerHurt.play()
-	#if health
+	if health <= 0:
+		self.death()
 	
 func collectMoney(amount):
 	$PickupCoin.play()
@@ -25,7 +26,7 @@ func collectMoney(amount):
 	return money
 
 func death():
-	print("Player is dead")
+	get_tree().change_scene_to_file("res://game_over.tscn")
 
 func _ready():
 	weapon.visible = false
