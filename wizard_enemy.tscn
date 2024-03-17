@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bstolvxoeua5n"]
+[gd_scene load_steps=13 format=3 uid="uid://dtj1a8bndcvg7"]
 
 [ext_resource type="Script" path="res://wizard_enemy.gd" id="1_o00ni"]
 [ext_resource type="Texture2D" uid="uid://cvvv8a5pjwiiv" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0111.png" id="1_oofvk"]
