@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b62i5odp8bp7"]
+[gd_scene load_steps=13 format=3 uid="uid://b62i5odp8bp7"]
 
 [ext_resource type="Texture2D" uid="uid://bkdk5xi24882p" path="res://all art/Neko Office Asset Pack/neko-office-tileset.png" id="1_jbdgj"]
 [ext_resource type="Texture2D" uid="uid://c55uqc8rc506j" path="res://all art/kenney_tiny-dungeon/Tilemap/tilemap.png" id="2_0gijs"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dmtojgxla13ty" path="res://all art/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="3_3ojp1"]
 [ext_resource type="Script" path="res://SpawningA.gd" id="5_idi17"]
 [ext_resource type="PackedScene" uid="uid://cyc2xge3qnmw3" path="res://ratenemy.tscn" id="6_0vi4b"]
-[ext_resource type="PackedScene" uid="uid://bstolvxoeua5n" path="res://wizard_enemy.tscn" id="8_6yxby"]
 [ext_resource type="PackedScene" uid="uid://dnybvsgd3a6fm" path="res://shop.tscn" id="9_jwoc1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xe6tp"]
@@ -1663,9 +1662,6 @@ position = Vector2(607, 383)
 
 [node name="Rat2" parent="SpawningA/NonRandomEnemies" instance=ExtResource("6_0vi4b")]
 position = Vector2(545, 594)
-
-[node name="WizardEnemy" parent="SpawningA/NonRandomEnemies" instance=ExtResource("8_6yxby")]
-position = Vector2(1055, 99)
 
 [node name="Shop" parent="." instance=ExtResource("9_jwoc1")]
 position = Vector2(4257, -338)

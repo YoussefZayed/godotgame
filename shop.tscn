@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnybvsgd3a6fm"]
 
-[ext_resource type="PackedScene" path="res://heal_shop_item.tscn" id="1_xir2x"]
+[ext_resource type="PackedScene" uid="uid://c414du41m7bws" path="res://heal_shop_item.tscn" id="1_xir2x"]
 
 [node name="Shop" type="Node2D"]
 

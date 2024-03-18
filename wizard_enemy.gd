@@ -1,18 +1,22 @@
 extends CharacterBody2D
+#signal projectileShot(projectile_instance)
 
 @export var speed = 75
 @export var knockbackForce = 25
 var player_chase = false
 var player = null
 var health = 30
-var spawnedCoin = false
+var spawned1Coin = false
+var spawned2Coin = false
 var isDieing = false
 @export var coin = preload("res://coin.tscn")
+@export var projectile = preload("res://projectile.tscn")
+@onready var shoot_position = $ShootPosition
+#@onready var main = preload("res://main.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("default")
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -45,11 +49,14 @@ func death():
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnCoin()
+	spawnCoin()
 	self.queue_free()
 
 func spawnCoin():
-	if !spawnedCoin:
-		spawnedCoin = true
+	if !spawned1Coin or !spawned2Coin:
+		if spawned1Coin:
+			spawned2Coin = true
+		spawned1Coin = true
 		var newCoin = coin.instantiate()
 		newCoin.position = self.position
 		get_parent().add_child(newCoin)
@@ -58,6 +65,7 @@ func _on_detection_area_body_entered(body):
 	if body is Player:
 		player = body
 		player_chase = true
+		$ShootProjectile.start()
 
 func knockedBack():
 	var knockbackDirection = player.position.direction_to(self.position)
@@ -70,3 +78,19 @@ func _on_hurt_box_area_entered(area):
 		self.enemyHit(player.damage)
 		print("Enemy health: ", health)
 		knockedBack()
+
+func _on_shoot_projectile_timeout():
+	shoot()
+
+func shoot():
+	var projectile_instance = projectile.instantiate()
+	projectile_instance.global_position = shoot_position.global_position
+	
+	var target = player.global_position
+	var direction_to_target = projectile_instance.global_position.direction_to(target).normalized()
+	projectile_instance.set_direction(direction_to_target)
+	projectile_instance.look_at(target)
+	#main.$Projectiles.handleProjectiles(projectile_instance)
+	#projectileShot.emit(projectile_instance)
+	#add_child(projectile_instance)
+	#$Projectiles.handleProjectiles(projectile_instance)
