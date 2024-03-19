@@ -9,7 +9,8 @@ var spawnedCoin = false
 var isDieing = false
 @export var coin = preload("res://coin.tscn")
 
-
+func _ready():
+	$AnimatedSprite2D.play("default")
 
 func _physics_process(delta):
 	
