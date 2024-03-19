@@ -43,7 +43,7 @@ func _on_hurt_area_entered(area):
 	
 	if area.name == "PowerPointAbility" && player:
 		health -= player.ult_damage
-		print("Enemy health: ", health)
+		print("Boss health: ", health)
 		
 		
 
