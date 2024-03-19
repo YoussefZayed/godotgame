@@ -13,6 +13,7 @@ var dir = Vector2.ZERO
 @onready var weaponCollision = $Weapon/Ruler/CollisionShape2D
 var ult_ability = preload("res://power_point_ability.tscn")
 var ult_cooldown = true
+var ult_damage = 50
 
 signal enemy_hit(damage, body)
 
@@ -94,6 +95,8 @@ func _process(delta):
 		ult_instance.global_position = $Marker2D.global_position
 		add_child(ult_instance)
 		
+		await get_tree().create_timer(5).timeout
+		ult_cooldown = true
 	
 	if Input.is_action_just_pressed("attack_melee"):
 		weapon.visible = true

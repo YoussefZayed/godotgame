@@ -75,4 +75,9 @@ func _on_hurt_box_area_entered(area):
 		self.enemyHit(player.damage)
 		print("Enemy health: ", health)
 		knockedBack()
+		
+	if area.name == "PowerPointAbility" && player:
+		self.enemyHit(player.ult_damage)
+		print("Enemy health: ", health)
+		knockedBack()
 

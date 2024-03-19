@@ -429,3 +429,5 @@ stream = ExtResource("12_63uxq")
 volume_db = -5.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
