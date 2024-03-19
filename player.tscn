@@ -427,3 +427,5 @@ volume_db = -4.956
 [node name="PickupCoin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_63uxq")
 volume_db = -5.0
+
+[node name="Marker2D" type="Marker2D" parent="."]

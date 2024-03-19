@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4eexbpy7f5sf"]
+
+[ext_resource type="Texture2D" uid="uid://ceyw6w1rdiqml" path="res://all art/assets - charles/mouse-pointer.png" id="1_86bnk"]
+[ext_resource type="Script" path="res://power_point_ability.gd" id="1_lr8m6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fn1sn"]
+radius = 22.0
+
+[node name="PowerPointAbility" type="Area2D"]
+script = ExtResource("1_lr8m6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("1_86bnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 3)
+shape = SubResource("CircleShape2D_fn1sn")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-14, 4)
+scale = Vector2(1, 1.2)
