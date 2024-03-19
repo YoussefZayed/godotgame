@@ -41,6 +41,7 @@ func enemyHit(damage):
 	$EnemyHurt.play()
 
 func death():
+	$ShootProjectile.stop()
 	$EnemyDeath.play()
 	player_chase = false
 	velocity = Vector2.ZERO
