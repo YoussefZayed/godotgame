@@ -10,7 +10,9 @@ var isDieing = false
 @export var coin = preload("res://coin.tscn")
 
 
+
 func _physics_process(delta):
+	
 	if player_chase and !isDieing:
 		get_node("AnimatedSprite2D").play("default")
 		var distance = player.position - position
@@ -42,6 +44,7 @@ func death():
 	$EnemyDeath.play()
 	player_chase = false
 	set_sleeping(true)
+	$CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnCoin()
