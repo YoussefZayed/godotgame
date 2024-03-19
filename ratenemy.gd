@@ -44,6 +44,7 @@ func death():
 	player_chase = false
 	set_sleeping(true)
 	#$CollisionShape2D.set_deferred("disabled", true)
+	$HurtBox/CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnCoin()
