@@ -27,6 +27,7 @@ func spawnRuby():
 func die():
 	isDead = true
 	$EnemyDeath.play()
+	$CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnRuby()

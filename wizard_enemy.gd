@@ -45,6 +45,7 @@ func death():
 	$EnemyDeath.play()
 	player_chase = false
 	velocity = Vector2.ZERO
+	$CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnCoin()
