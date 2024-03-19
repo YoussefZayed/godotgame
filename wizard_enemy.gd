@@ -1,4 +1,5 @@
 extends CharacterBody2D
+#signal player_shot_projectile(projectile_instance)
 
 @export var speed = 75
 @export var knockbackForce = 25
@@ -97,3 +98,4 @@ func shoot():
 	projectile_instance.set_direction(direction_to_target)
 	projectile_instance.look_at(target)
 	get_tree().get_current_scene().add_child(projectile_instance)
+	#player_shot_projectile.emit(projectile_instance)
