@@ -1,5 +1,4 @@
 extends CharacterBody2D
-#signal projectileShot(projectile_instance)
 
 @export var speed = 75
 @export var knockbackForce = 25
@@ -12,7 +11,6 @@ var isDieing = false
 @export var coin = preload("res://coin.tscn")
 @export var projectile = preload("res://projectile.tscn")
 @onready var shoot_position = $ShootPosition
-#@onready var main = preload("res://main.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -90,7 +88,4 @@ func shoot():
 	var direction_to_target = projectile_instance.global_position.direction_to(target).normalized()
 	projectile_instance.set_direction(direction_to_target)
 	projectile_instance.look_at(target)
-	#main.$Projectiles.handleProjectiles(projectile_instance)
-	#projectileShot.emit(projectile_instance)
-	#add_child(projectile_instance)
-	#$Projectiles.handleProjectiles(projectile_instance)
+	get_tree().get_current_scene().add_child(projectile_instance)
