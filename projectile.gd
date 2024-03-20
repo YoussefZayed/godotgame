@@ -22,3 +22,6 @@ func _on_body_entered(body):
 		self.hide()
 		body.playerHit(damageDone)
 		self.queue_free()
+	elif body.is_in_group("walls"):
+		self.hide()
+		self.queue_free()
