@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0bwxhngfu2ph"]
+[gd_scene load_steps=3 format=3 uid="uid://c0bwxhngfu2ph"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_xyugs"]
+[ext_resource type="Texture2D" uid="uid://b8txnrkw42sj2" path="res://all art/ruler animations - emily/titlescreenimage.png" id="2_pge1t"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,18 +12,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xyugs")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.376471, 0.278431, 0.160784, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 132.0
+offset_right = 779.0
+offset_bottom = 760.0
+texture = ExtResource("2_pge1t")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.735
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.735
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -68.5
-offset_right = 52.0
-offset_bottom = 68.5
-grow_horizontal = 2
+offset_left = -71.8
+offset_top = 3.0
+offset_right = 98.2
+offset_bottom = 154.0
+grow_horizontal = 0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -30,7 +45,7 @@ layout_mode = 2
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 35
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -45,19 +60,19 @@ text = "Quit"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -116.0
-offset_top = -222.0
-offset_right = 121.0
-offset_bottom = -153.0
+anchors_preset = -1
+anchor_left = 0.739
+anchor_top = 0.273
+anchor_right = 0.739
+anchor_bottom = 0.273
+offset_left = -141.92
+offset_top = -41.56
+offset_right = 143.08
+offset_bottom = 41.44
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 60
 text = "Cat Office"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
