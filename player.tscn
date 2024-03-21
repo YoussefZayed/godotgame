@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=45 format=3 uid="uid://cyqpd2yyfbeu1"]
-
+[gd_scene load_steps=44 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -382,7 +380,7 @@ speed = 500.0
 position = Vector2(-0.249999, 0)
 scale = Vector2(2.15625, 2.1875)
 sprite_frames = SubResource("SpriteFrames_d3nqb")
-animation = &"walk_side"
+animation = &"walk_back"
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -441,3 +439,6 @@ offset_top = 79.0
 offset_right = 138.0
 offset_bottom = 86.0
 scale = Vector2(4, 4)
+
+[node name="ShootPosition" type="Marker2D" parent="."]
+position = Vector2(0, 7)

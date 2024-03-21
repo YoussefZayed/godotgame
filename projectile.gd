@@ -19,6 +19,7 @@ func set_direction(direction: Vector2):
 	self.direction = direction
 
 func _on_body_entered(body):
+	print(enemy)
 	if enemy:
 		damageDone = 7
 		if body.has_method("playerHit"):
@@ -30,8 +31,8 @@ func _on_body_entered(body):
 			self.queue_free()
 	else:
 		damageDone = 2
-		print(body.name)
-		if body.is_in_group("enemies"):
+		if body.is_in_group("enemies") or body.name == "Rat" or body.has_method("enemyHit"):
+			print(body.name)
 			print("HIT")
 			self.hide()
 			body.enemyHit(damageDone)
