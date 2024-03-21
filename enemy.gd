@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var knockbackForce = 100
 var player_chase = false
 var player = null
+#var maxHealth = 20
 var health = 20
 var spawnedCoin = false
 var isDieing = false
@@ -31,6 +32,10 @@ func _physics_process(delta):
 	if self.health <= 0 && !isDieing:
 		isDieing = true
 		self.death()
+	
+	#if health < maxHealth:
+		#player = 
+		#player_chase = true
 		
 #func _set_health(value):
 	#super._set_health(value)
@@ -41,8 +46,8 @@ func enemyHit(damage):
 	healthbar.health = health
 	$EnemyHurt.play()
 	
-	
-	
+
+
 	
 func spawnCoin():
 	if !spawnedCoin :

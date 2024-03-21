@@ -28,6 +28,7 @@ func _physics_process(delta):
 		self.death()
 
 func enemyHit(damage):
+	print("RAT HIT")
 	health -= damage
 	$EnemyHurt.play()
 	
@@ -83,4 +84,9 @@ func _on_hurt_box_area_entered(area):
 		self.enemyHit(player.ult_damage)
 		print("Enemy health: ", health)
 		knockedBack()
+		
+	if area.name == "Projectile":
+		self.enemyHit(area.damageDone)
+		print("Enemy health: ", health)
+		#knockedBack()
 

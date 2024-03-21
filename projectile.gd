@@ -7,7 +7,7 @@ var enemy = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$Length.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -31,9 +31,7 @@ func _on_body_entered(body):
 			self.queue_free()
 	else:
 		damageDone = 2
-		if body.is_in_group("enemies") or body.name == "Rat" or body.has_method("enemyHit"):
-			print(body.name)
-			print("HIT")
+		if body.is_in_group("enemies"):
 			self.hide()
 			body.enemyHit(damageDone)
 			self.queue_free()
@@ -49,3 +47,8 @@ func playEraser():
 
 func enemyAttack(attack):
 	enemy = attack
+
+
+func _on_length_timeout():
+	self.hide()
+	self.queue_free()
