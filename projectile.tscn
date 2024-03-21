@@ -1,11 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnequs0yujjvl"]
+[gd_scene load_steps=7 format=3 uid="uid://bnequs0yujjvl"]
 
 [ext_resource type="Script" path="res://projectile.gd" id="1_rgv3p"]
 [ext_resource type="Texture2D" uid="uid://br28meyuumbxl" path="res://all art/projectile animations - emily/fireball1.png" id="1_srlvd"]
 [ext_resource type="Texture2D" uid="uid://bv86dffuvwrkv" path="res://all art/projectile animations - emily/fireball2.png" id="2_57hki"]
+[ext_resource type="Texture2D" uid="uid://dqeu1jgigatnr" path="res://all art/other - emily/eraser.png" id="2_r7iqy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_io5y6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r7iqy")
+}],
+"loop": true,
+"name": &"eraser",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_srlvd")
@@ -29,7 +38,7 @@ position = Vector2(-3, 0)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_io5y6")
-animation = &"fireball"
+animation = &"eraser"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fu2hu")
