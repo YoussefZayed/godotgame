@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 200.0
-@export var maxHealth = 100
 @export var money = 0
+@export var maxHealth = 100
 @export var health = 100
 @export var damage = 10
 @export var rulerDamage = 10
@@ -14,6 +14,8 @@ var dir = Vector2.ZERO
 @onready var weapAnim = $AnimationPlayer
 @onready var weapon = $Weapon
 @onready var weaponCollision = $Weapon/Ruler/CollisionShape2D
+@onready var healthbar = $CanvasLayer/HealthBar2
+
 var ult_ability = preload("res://power_point_ability.tscn")
 var ult_cooldown = true
 var ult_damage = 50
@@ -33,6 +35,8 @@ func playerHit(amount):
 	$PlayerHurt.play()
 	if health <= 0:
 		self.death()
+		
+	healthbar.health = health
 	
 func collectMoney(amount):
 	$PickupCoin.play()
@@ -45,6 +49,7 @@ func death():
 func _ready():
 	weapon.visible = false
 	weaponCollision.set_deferred("disabled", true)
+	healthbar.init_health(health)
 
 func use_ult_ability():
 	ult_ability

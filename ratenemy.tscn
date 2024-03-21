@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ljpjc"]
-radius = 354.023
+radius = 225.002
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7amqg"]
 radius = 17.0294
@@ -78,6 +78,7 @@ metadata/_edit_lock_ = true
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_ljpjc")

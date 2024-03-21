@@ -71,6 +71,9 @@ lock_rotation = true
 max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_1sfvf")
+speed = null
+knockbackForce = null
+coin = null
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -106,9 +109,8 @@ volume_db = -10.0
 [node name="HealthBar" parent="." instance=ExtResource("12_3g1il")]
 offset_left = -28.0
 offset_top = -47.0
-offset_right = -1.0
-offset_bottom = -44.0
-scale = Vector2(2, 2)
+offset_right = 27.0
+offset_bottom = -42.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

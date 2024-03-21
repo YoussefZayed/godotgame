@@ -9,13 +9,23 @@ signal spawnRats(player)
 
 @export var ruby = preload("res://ruby.tscn")
 @export var timer_secs = 6
+@onready var healthbar = $CanvasLayer/HealthBar
+@onready var bossName = $CanvasLayer/Name
 
 func _ready():
+	healthbar.set_visible(false)
+	bossName.set_visible(false)
 	get_node("AnimatedSprite2D").play("default")
+	healthbar.init_health(health)
 	
 func _process(delta):
 	if (health <= 0 && !isDead):
 		self.die()
+	
+	#if(bossBattle):
+		#healthbar.set_visible(true)
+		#bossName.set_visible(true)
+	
 
 func spawnRuby():
 	if !spawnedRuby :
@@ -62,4 +72,5 @@ func _on_detection_area_body_entered(body):
 			$spawnRats.start(timer_secs)
 			emit_signal("spawnRats",player)
 			bossBattle = true
-		
+			
+	

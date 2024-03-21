@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c62pya7s60qyv"]
+[gd_scene load_steps=16 format=3 uid="uid://c62pya7s60qyv"]
 
 [ext_resource type="Texture2D" uid="uid://c5yv3a00qa2m6" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0124.png" id="1_0vxxa"]
 [ext_resource type="Script" path="res://rat_boss.gd" id="1_1oabs"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cg704e3q3xwrd" path="res://all art/explosion animations - emily/explosion4.png" id="5_r3xee"]
 [ext_resource type="Texture2D" uid="uid://benndmddp3t2f" path="res://all art/explosion animations - emily/explosion5.png" id="6_2mdpx"]
 [ext_resource type="Texture2D" uid="uid://wbcsvy88yw70" path="res://all art/explosion animations - emily/explosion6.png" id="7_um0fr"]
+[ext_resource type="PackedScene" uid="uid://bj6br52itu2yd" path="res://health_bar.tscn" id="11_07avw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ydnv0"]
 animations = [{
@@ -85,6 +86,25 @@ volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aov5q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("11_07avw")]
+offset_left = 223.0
+offset_top = 623.0
+offset_right = 433.0
+offset_bottom = 629.0
+scale = Vector2(4, 4)
+
+[node name="Name" type="Label" parent="CanvasLayer"]
+offset_left = 228.0
+offset_top = 576.0
+offset_right = 417.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 25
+text = "Patches the Rat
+
+"
 
 [connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_entered"]
 [connection signal="timeout" from="spawnRats" to="." method="_on_spawn_rats_timeout"]
