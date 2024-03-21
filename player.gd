@@ -37,6 +37,7 @@ func _ready():
 
 func use_ult_ability():
 	ult_ability
+	
 
 func _process(delta):
 	var direction = Input.get_vector("move_left", "move_right","move_up", "move_down").normalized()
@@ -89,6 +90,7 @@ func _process(delta):
 	
 	
 	if Input.is_action_just_pressed("use_ult") and ult_cooldown:
+		$UltAbility.play()
 		ult_cooldown = false
 		var ult_instance = ult_ability.instantiate()
 		ult_instance.rotation = $Marker2D.rotation
