@@ -79,7 +79,7 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" groups=["enemies"]]
 shape = SubResource("CircleShape2D_ljpjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -43,9 +43,13 @@ func _on_hurt_area_entered(area):
 	
 	if area.name == "PowerPointAbility" && player:
 		health -= player.ult_damage
+		$EnemyHurt.play()
 		print("Boss health: ", health)
 		
-		
+	if area.name == "Projectile" && player:
+		health -= player.proj_damage
+		$EnemyHurt.play()
+		print("Boss health: ", health)
 
 
 func _on_spawn_rats_timeout():
