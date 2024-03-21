@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://calxxw8t0dcie"]
+
+[ext_resource type="PackedScene" uid="uid://c414du41m7bws" path="res://heal_shop_item.tscn" id="1_y2nib"]
+[ext_resource type="PackedScene" uid="uid://0dtbvi0fxwuh" path="res://ruler_upgrade_shop_item.tscn" id="2_wxwae"]
+
+[node name="Shop" type="Node2D"]
+
+[node name="HealShopItem" parent="." instance=ExtResource("1_y2nib")]
+position = Vector2(-96, -4)
+cost = 10
+
+[node name="Label" type="Label" parent="."]
+offset_left = -68.0
+offset_top = -274.0
+offset_right = 67.0
+offset_bottom = -219.0
+theme_override_font_sizes/font_size = 40
+text = "Shop"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="RulerShopItem" parent="." instance=ExtResource("2_wxwae")]
+position = Vector2(90, -2)
+cost = 5
+costIncreaseMultiplier = 3.0
+maxNumberOfTimesBought = 2

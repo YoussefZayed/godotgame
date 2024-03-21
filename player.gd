@@ -7,6 +7,9 @@ signal player_shot_projectile(projectile_instance)
 @export var money = 0
 @export var health = 100
 @export var damage = 10
+@export var rulerDamage = 10
+@export var rulerSpeed = 1.0
+@export var rulerSize = 1.0
 var dir = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
 @onready var weapAnim = $AnimationPlayer
@@ -20,6 +23,14 @@ var ult_damage = 50
 var proj_damage = 2
 
 signal enemy_hit(damage, body)
+
+func upgradeRuler():
+	rulerDamage *= 1.1
+	rulerSpeed *= 1.05
+	rulerSize *= 1.1
+	weapAnim.speed_scale = rulerSpeed
+	weapon.scale.x = rulerSize
+	weapon.scale.y = rulerSize
 
 func playerHit(amount): 
 	health -= amount
@@ -41,6 +52,7 @@ func _ready():
 
 func use_ult_ability():
 	ult_ability
+	
 
 func _process(delta):
 	var direction = Input.get_vector("move_left", "move_right","move_up", "move_down").normalized()
@@ -93,6 +105,7 @@ func _process(delta):
 	
 	
 	if Input.is_action_just_pressed("use_ult") and ult_cooldown:
+		$UltAbility.play()
 		ult_cooldown = false
 		var ult_instance = ult_ability.instantiate()
 		ult_instance.rotation = $Marker2D.rotation

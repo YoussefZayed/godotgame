@@ -1,28 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://c414du41m7bws"]
+[gd_scene load_steps=5 format=3 uid="uid://0dtbvi0fxwuh"]
 
-[ext_resource type="Script" path="res://heal_shop_item.gd" id="1_vkhmx"]
-[ext_resource type="Texture2D" uid="uid://cdg2dc66qj6o8" path="res://all art/PixelOffice/PixelOfficeAssets.png" id="2_5kmq5"]
+[ext_resource type="Texture2D" uid="uid://ddnbab70djia4" path="res://all art/ruler animations - emily/ruler 4.png" id="1_3dryf"]
+[ext_resource type="Script" path="res://ruler_upgrade_shop_item.gd" id="1_8u51w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j1qy"]
 radius = 118.004
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wycsd"]
-atlas = ExtResource("2_5kmq5")
-region = Rect2(147, 139, 9, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x5so"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wycsd")
+"texture": ExtResource("1_3dryf")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="HealShopItem" type="Node2D"]
-script = ExtResource("1_vkhmx")
+[node name="RulerShopItem" type="Node2D"]
+script = ExtResource("1_8u51w")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -39,14 +35,15 @@ theme_override_font_sizes/font_size = 18
 text = "Buy"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4.65278, 4.65278)
+position = Vector2(-5, -7)
+scale = Vector2(0.251458, 0.251458)
 sprite_frames = SubResource("SpriteFrames_3x5so")
 
 [node name="useLabel" type="Label" parent="."]
-offset_left = -53.0
-offset_top = 78.0
-offset_right = 35.0
-offset_bottom = 101.0
+offset_left = -46.0
+offset_top = 79.0
+offset_right = 42.0
+offset_bottom = 102.0
 text = "Uses Left"
 horizontal_alignment = 1
 
@@ -59,11 +56,11 @@ text = "Cost: "
 horizontal_alignment = 1
 
 [node name="ItemLabel" type="Label" parent="."]
-offset_left = -43.0
-offset_top = 39.0
-offset_right = 45.0
-offset_bottom = 62.0
-text = "Heal"
+offset_left = -60.0
+offset_top = 29.0
+offset_right = 52.0
+offset_bottom = 52.0
+text = "Upgrade Ruler"
 horizontal_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

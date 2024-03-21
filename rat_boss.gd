@@ -37,7 +37,7 @@ func die():
 
 func _on_hurt_area_entered(area):
 	if area.name == "Ruler" && player:
-		health -=  player.damage
+		health -=  player.rulerDamage
 		$EnemyHurt.play()
 		print("Boss health: ", health)
 	
