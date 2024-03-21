@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b62i5odp8bp7"]
+[gd_scene load_steps=16 format=3 uid="uid://b62i5odp8bp7"]
 
+[ext_resource type="Texture2D" uid="uid://dj2py6pcc8o1k" path="res://all art/other - emily/wasd.png" id="1_ctxr4"]
 [ext_resource type="Texture2D" uid="uid://bkdk5xi24882p" path="res://all art/Neko Office Asset Pack/neko-office-tileset.png" id="1_jbdgj"]
 [ext_resource type="Texture2D" uid="uid://c55uqc8rc506j" path="res://all art/kenney_tiny-dungeon/Tilemap/tilemap.png" id="2_0gijs"]
 [ext_resource type="PackedScene" uid="uid://b58ayxr1nyphe" path="res://enemy.tscn" id="2_1nkth"]
+[ext_resource type="Texture2D" uid="uid://dav58crkbvgp4" path="res://all art/other - emily/mouseclick.png" id="2_wtr7h"]
 [ext_resource type="PackedScene" uid="uid://0rx5ejynu07n" path="res://bossRoomRat.tscn" id="3_2sgw7"]
 [ext_resource type="Texture2D" uid="uid://dmtojgxla13ty" path="res://all art/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="3_3ojp1"]
 [ext_resource type="Script" path="res://SpawningA.gd" id="5_idi17"]
@@ -1573,11 +1575,27 @@ sources/2 = SubResource("TileSetAtlasSource_p75fk")
 [node name="RoomA" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -578.0
-offset_top = -2287.0
-offset_right = 5086.0
-offset_bottom = 1480.0
+offset_left = -615.0
+offset_top = -2279.0
+offset_right = 5049.0
+offset_bottom = 1488.0
 color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="KeysTexture" type="TextureRect" parent="."]
+offset_left = 302.0
+offset_top = 810.0
+offset_right = 384.0
+offset_bottom = 868.0
+texture = ExtResource("1_ctxr4")
+expand_mode = 1
+
+[node name="LeftMouse" type="TextureRect" parent="."]
+offset_left = 705.0
+offset_top = 807.0
+offset_right = 745.0
+offset_bottom = 866.0
+texture = ExtResource("2_wtr7h")
+expand_mode = 1
 
 [node name="TileMap" type="TileMap" parent="." groups=["walls"]]
 tile_set = SubResource("TileSet_e47ar")
