@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=44 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://nb5irm6djsjp" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-walk.png" id="10_h67hk"]
 [ext_resource type="AudioStream" uid="uid://jam13hjppcci" path="res://all art/sounds effects/playerHurt.wav" id="11_0uqda"]
 [ext_resource type="Texture2D" uid="uid://cgk5hqi08dlxv" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-walk.png" id="11_3fmfk"]
+[ext_resource type="AudioStream" uid="uid://gwnh3chlwa3r" path="res://all art/sounds effects/ultAbility.wav" id="11_dq4uq"]
 [ext_resource type="AudioStream" uid="uid://nnp8fbtnf2lf" path="res://all art/sounds effects/pickupCoin.wav" id="12_63uxq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
@@ -410,6 +411,9 @@ volume_db = -4.956
 [node name="PickupCoin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_63uxq")
 volume_db = -5.0
+
+[node name="UltAbility" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_dq4uq")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
