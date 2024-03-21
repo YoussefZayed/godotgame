@@ -1,13 +1,14 @@
 extends CharacterBody2D
 class_name Player
+signal player_shot_projectile(projectile_instance)
 
 @export var speed = 200.0
 @export var money = 0
 @export var maxHealth = 100
 @export var health = 100
 @export var damage = 10
-@export var rulerDamage = 10
-@export var rulerSpeed = 1.0
+@export var rulerDamage = 9.1
+@export var rulerSpeed = 0.75
 @export var rulerSize = 1.0
 var dir = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
@@ -17,8 +18,11 @@ var dir = Vector2.ZERO
 @onready var healthbar = $CanvasLayer/HealthBar2
 
 var ult_ability = preload("res://power_point_ability.tscn")
+@export var projectile = preload("res://projectile.tscn")
+@onready var shoot_position = $ShootPosition
 var ult_cooldown = true
 var ult_damage = 50
+var proj_damage = 2
 
 signal enemy_hit(damage, body)
 
@@ -50,6 +54,8 @@ func _ready():
 	weapon.visible = false
 	weaponCollision.set_deferred("disabled", true)
 	healthbar.init_health(health)
+	weapAnim.speed_scale = rulerSpeed
+
 
 func use_ult_ability():
 	ult_ability
@@ -127,9 +133,21 @@ func _process(delta):
 			weapAnim.play("ruler_attack_back")
 		else:
 			weapAnim.play("ruler_attack_front")
-		
+	if Input.is_action_just_pressed("attack_distance"):
+		shoot()
+	
 	await weapAnim.animation_finished
 	weapon.visible = false
 	weaponCollision.set_deferred("disabled", true)
 	
-
+func shoot():
+	var projectile_instance = projectile.instantiate()
+	projectile_instance.global_position = shoot_position.global_position
+	
+	var target = get_global_mouse_position()
+	var direction_to_target = projectile_instance.global_position.direction_to(target).normalized()
+	projectile_instance.set_direction(direction_to_target)
+	projectile_instance.playEraser()
+	projectile_instance.enemyAttack(false)
+	projectile_instance.look_at(target)
+	player_shot_projectile.emit(projectile_instance)
