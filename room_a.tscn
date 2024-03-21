@@ -1694,7 +1694,7 @@ position = Vector2(607, 383)
 position = Vector2(545, 594)
 
 [node name="Shop" parent="." instance=ExtResource("9_jwoc1")]
-position = Vector2(4257, -338)
+position = Vector2(4196, -273)
 
 [node name="Projectiles" type="Node2D" parent="."]
 script = ExtResource("9_a4r5p")

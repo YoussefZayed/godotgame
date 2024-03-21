@@ -1,10 +1,8 @@
 extends ShopItem
 
 
-
-
 func _process(delta):
-	checkIsDisabled(player && player.health == player.maxHealth)
+	checkIsDisabled(false)
 	if (!isDisabled):
 		$Button.visible = true
 	else:
@@ -14,8 +12,8 @@ func _process(delta):
 
 
 
-func healPlayer():
-	player.health = player.maxHealth
+func upgradeRuler():
+	player.upgradeRuler()
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
@@ -26,4 +24,4 @@ func _on_area_2d_body_exited(body):
 		player = null
 		
 func _on_button_pressed():
-	buyItem(healPlayer)
+	buyItem(upgradeRuler)

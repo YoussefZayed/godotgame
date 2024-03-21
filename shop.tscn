@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnybvsgd3a6fm"]
+[gd_scene load_steps=3 format=3 uid="uid://dnybvsgd3a6fm"]
 
 [ext_resource type="PackedScene" uid="uid://c414du41m7bws" path="res://heal_shop_item.tscn" id="1_xir2x"]
+[ext_resource type="PackedScene" uid="uid://0dtbvi0fxwuh" path="res://ruler_upgrade_shop_item.tscn" id="2_s8b1d"]
 
 [node name="Shop" type="Node2D"]
 
@@ -18,10 +19,11 @@ text = "Shop"
 horizontal_alignment = 1
 uppercase = true
 
+[node name="RulerShopItem" parent="." instance=ExtResource("2_s8b1d")]
+position = Vector2(0, -3)
+cost = 20
+costIncreaseMultiplier = 2.0
+
 [node name="HealShopItem3" parent="." instance=ExtResource("1_xir2x")]
 position = Vector2(157, 0)
 cost = 20
-
-[node name="HealShopItem2" parent="." instance=ExtResource("1_xir2x")]
-position = Vector2(-1, 0)
-maxNumberOfTimesBought = 20

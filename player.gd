@@ -6,6 +6,9 @@ class_name Player
 @export var money = 0
 @export var health = 100
 @export var damage = 10
+@export var rulerDamage = 10
+@export var rulerSpeed = 1.0
+@export var rulerSize = 1.0
 var dir = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
 @onready var weapAnim = $AnimationPlayer
@@ -16,6 +19,14 @@ var ult_cooldown = true
 var ult_damage = 50
 
 signal enemy_hit(damage, body)
+
+func upgradeRuler():
+	rulerDamage *= 1.1
+	rulerSpeed *= 1.05
+	rulerSize *= 1.1
+	weapAnim.speed_scale = rulerSpeed
+	weapon.scale.x = rulerSize
+	weapon.scale.y = rulerSize
 
 func playerHit(amount): 
 	health -= amount
