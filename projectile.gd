@@ -19,7 +19,6 @@ func set_direction(direction: Vector2):
 	self.direction = direction
 
 func _on_body_entered(body):
-	print(enemy)
 	if enemy:
 		damageDone = 7
 		if body.has_method("playerHit"):
