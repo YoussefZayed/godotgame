@@ -13,8 +13,8 @@ signal spawnRats(player)
 @onready var bossName = $CanvasLayer/Name
 
 func _ready():
-	healthbar.set_visible(false)
-	bossName.set_visible(false)
+	#healthbar.set_visible(false)
+	#bossName.set_visible(false)
 	get_node("AnimatedSprite2D").play("default")
 	healthbar.init_health(health)
 	
@@ -72,6 +72,8 @@ func _on_detection_area_body_entered(body):
 	if body is Player:
 		player = body
 		if (!bossBattle):
+			healthbar.set_visible(true)
+			bossName.set_visible(true)
 			print("Battle Rats")
 			$spawnRats.start(timer_secs)
 			emit_signal("spawnRats",player)

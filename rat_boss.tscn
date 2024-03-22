@@ -90,6 +90,7 @@ shape = SubResource("CircleShape2D_aov5q")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource("11_07avw")]
+visible = false
 offset_left = 223.0
 offset_top = 623.0
 offset_right = 433.0
@@ -97,6 +98,7 @@ offset_bottom = 629.0
 scale = Vector2(4, 4)
 
 [node name="Name" type="Label" parent="CanvasLayer"]
+visible = false
 offset_left = 228.0
 offset_top = 576.0
 offset_right = 417.0

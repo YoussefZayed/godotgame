@@ -133,6 +133,7 @@ func _process(delta):
 			weapAnim.play("ruler_attack_back")
 		else:
 			weapAnim.play("ruler_attack_front")
+			
 	if Input.is_action_just_pressed("attack_distance"):
 		shoot()
 	
