@@ -1591,12 +1591,21 @@ texture = ExtResource("1_ctxr4")
 expand_mode = 1
 
 [node name="LeftMouse" type="TextureRect" parent="."]
-offset_left = 705.0
-offset_top = 807.0
-offset_right = 745.0
-offset_bottom = 866.0
+offset_left = 608.0
+offset_top = 663.0
+offset_right = 648.0
+offset_bottom = 722.0
 texture = ExtResource("2_wtr7h")
 expand_mode = 1
+
+[node name="RightMouse" type="TextureRect" parent="."]
+offset_left = 631.0
+offset_top = -65.0
+offset_right = 671.0
+offset_bottom = -6.0
+texture = ExtResource("2_wtr7h")
+expand_mode = 1
+flip_h = true
 
 [node name="TileMap" type="TileMap" parent="." groups=["walls"]]
 tile_set = SubResource("TileSet_e47ar")
@@ -1686,13 +1695,13 @@ position = Vector2(3650, 148)
 [node name="NonRandomEnemies" type="Node" parent="SpawningA"]
 
 [node name="Enemy" parent="SpawningA/NonRandomEnemies" instance=ExtResource("2_1nkth")]
-position = Vector2(472, 174)
+position = Vector2(483, 82)
 
 [node name="Rat" parent="SpawningA/NonRandomEnemies" instance=ExtResource("6_0vi4b")]
-position = Vector2(607, 383)
+position = Vector2(627, 313)
 
 [node name="Rat2" parent="SpawningA/NonRandomEnemies" instance=ExtResource("6_0vi4b")]
-position = Vector2(545, 594)
+position = Vector2(547, 591)
 
 [node name="Shop" parent="." instance=ExtResource("9_jwoc1")]
 position = Vector2(4196, -273)
