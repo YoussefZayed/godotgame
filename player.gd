@@ -16,7 +16,7 @@ var dir = Vector2.ZERO
 @onready var weapon = $Weapon
 @onready var weaponCollision = $Weapon/Ruler/CollisionShape2D
 @onready var healthbar = $CanvasLayer/HealthBar2
-
+var ult_ability_active = false
 var ult_ability = preload("res://power_point_ability.tscn")
 @export var projectile = preload("res://projectile.tscn")
 @onready var shoot_position = $ShootPosition
@@ -111,7 +111,7 @@ func _process(delta):
 			anim.play("idle_front")
 	
 	
-	if Input.is_action_just_pressed("use_ult") and ult_cooldown:
+	if Input.is_action_just_pressed("use_ult") and ult_cooldown and ult_ability_active:
 		$UltAbility.play()
 		ult_cooldown = false
 		var ult_instance = ult_ability.instantiate()
@@ -152,3 +152,6 @@ func shoot():
 	projectile_instance.enemyAttack(false)
 	projectile_instance.look_at(target)
 	player_shot_projectile.emit(projectile_instance)
+
+func ultAbilityActive(isActive):
+	ult_ability_active = isActive

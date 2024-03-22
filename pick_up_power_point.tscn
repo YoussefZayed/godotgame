@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl8k53sdc5o62"]
+
+[ext_resource type="Script" path="res://pick_up_power_point.gd" id="1_2ln52"]
+[ext_resource type="Texture2D" uid="uid://ceyw6w1rdiqml" path="res://all art/assets - charles/mouse-pointer.png" id="1_df11j"]
+[ext_resource type="AudioStream" uid="uid://nnp8fbtnf2lf" path="res://all art/sounds effects/pickupCoin.wav" id="3_in13n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lsrhk"]
+radius = 15.5203
+height = 42.3282
+
+[node name="PickUpPowerPoint" type="Area2D"]
+script = ExtResource("1_2ln52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.71733
+scale = Vector2(1.4016, 1.54781)
+texture = ExtResource("1_df11j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-06, 1.90735e-06)
+rotation = 0.71733
+shape = SubResource("CapsuleShape2D_lsrhk")
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_in13n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

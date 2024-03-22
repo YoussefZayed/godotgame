@@ -4,10 +4,12 @@ var player = null
 var health = 300
 var bossBattle = false
 var spawnedRuby = false
+var spawnedPickUp = false
 var isDead = false
 signal spawnRats(player)
 
 @export var ruby = preload("res://ruby.tscn")
+@export var pick_up = preload("res://pick_up_power_point.tscn")
 @export var timer_secs = 6
 @onready var healthbar = $CanvasLayer/HealthBar
 @onready var bossName = $CanvasLayer/Name
@@ -34,6 +36,14 @@ func spawnRuby():
 		newRuby.position = self.position
 		get_parent().add_child(newRuby)
 
+func spawnPickUp():
+	if !spawnedPickUp:
+		spawnedPickUp = true
+		var newPickUp = pick_up.instantiate()
+		newPickUp.position = self.position
+		newPickUp.position.y -= 200
+		get_parent().add_child(newPickUp)
+
 func die():
 	isDead = true
 	$EnemyDeath.play()
@@ -42,6 +52,7 @@ func die():
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished
 	spawnRuby()
+	spawnPickUp()
 	self.queue_free()
 	print("Queue freed")
 
