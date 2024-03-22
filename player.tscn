@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=45 format=3 uid="uid://cyqpd2yyfbeu1"]
-
+[gd_scene load_steps=44 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]

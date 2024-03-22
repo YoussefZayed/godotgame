@@ -62,7 +62,7 @@ radius = 28.0
 radius = 29.0
 height = 64.0
 
-[node name="Enemy" type="RigidBody2D" groups=["enemies"]]
+[node name="Enemy" type="RigidBody2D"]
 position = Vector2(15, 5)
 mass = 0.49
 physics_material_override = SubResource("PhysicsMaterial_6iw1c")

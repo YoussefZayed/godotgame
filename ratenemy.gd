@@ -8,9 +8,11 @@ var health = 1
 var spawnedCoin = false
 var isDieing = false
 @export var coin = preload("res://coin.tscn")
+@onready var healthbar = $HealthBar
 
 func _ready():
 	$AnimatedSprite2D.play("default")
+	healthbar.init_health(health)
 
 func _physics_process(delta):
 	if player_chase and !isDieing:
@@ -29,6 +31,7 @@ func _physics_process(delta):
 
 func enemyHit(damage):
 	health -= damage
+	healthbar.health = health
 	$EnemyHurt.play()
 	
 func spawnCoin():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyc2xge3qnmw3"]
+[gd_scene load_steps=17 format=3 uid="uid://cyc2xge3qnmw3"]
 
 [ext_resource type="Script" path="res://ratenemy.gd" id="1_wjtyh"]
 [ext_resource type="Texture2D" uid="uid://bfvvq1krkdden" path="res://all art/explosion animations - emily/explosion1.png" id="3_1ravh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://benndmddp3t2f" path="res://all art/explosion animations - emily/explosion5.png" id="7_eq7xd"]
 [ext_resource type="Texture2D" uid="uid://wbcsvy88yw70" path="res://all art/explosion animations - emily/explosion6.png" id="8_60xwi"]
 [ext_resource type="Texture2D" uid="uid://pnjg2uf3328t" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0123.png" id="9_vl37x"]
+[ext_resource type="PackedScene" uid="uid://bj6br52itu2yd" path="res://health_bar.tscn" id="11_bjobu"]
 [ext_resource type="AudioStream" uid="uid://cp7mqp8c7eci6" path="res://all art/sounds effects/enemyHurt.wav" id="11_yb7e4"]
 [ext_resource type="AudioStream" uid="uid://c6e34ffta2ayn" path="res://all art/sounds effects/enemyDeath.wav" id="12_kpa6x"]
 
@@ -80,7 +81,7 @@ collision_layer = 2
 collision_mask = 2
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" groups=["enemies"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_ljpjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -98,6 +99,13 @@ stream = ExtResource("11_yb7e4")
 [node name="EnemyDeath" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_kpa6x")
 volume_db = -10.0
+
+[node name="HealthBar" parent="." instance=ExtResource("11_bjobu")]
+offset_left = -27.0
+offset_top = -31.0
+offset_right = 0.0
+offset_bottom = -28.0
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

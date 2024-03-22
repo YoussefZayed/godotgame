@@ -7,7 +7,6 @@ var player = null
 var health = 20
 var spawnedCoin = false
 var isDieing = false
-var x = 5
 @export var coin = preload("res://coin.tscn")
 @onready var healthbar = $HealthBar
 
@@ -32,9 +31,6 @@ func _physics_process(delta):
 		isDieing = true
 		self.death()
 		
-#func _set_health(value):
-	#super._set_health(value)
-	#healthbar.health = health
 
 func enemyHit(damage):
 	health -= damage

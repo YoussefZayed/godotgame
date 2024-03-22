@@ -11,10 +11,12 @@ var isDieing = false
 @export var coin = preload("res://coin.tscn")
 @export var projectile = preload("res://projectile.tscn")
 @onready var shoot_position = $ShootPosition
+@onready var healthbar = $HealthBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("default")
+	healthbar.init_health(health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,6 +40,7 @@ func _process(delta):
 
 func enemyHit(damage):
 	health -= damage
+	healthbar.health = health
 	$EnemyHurt.play()
 
 func death():
