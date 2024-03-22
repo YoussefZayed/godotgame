@@ -31,7 +31,7 @@ func _on_body_entered(body):
 			self.queue_free()
 	else:
 		damageDone = 2
-		if body.is_in_group("enemies"):
+		if body.has_method("enemyHit"):
 			self.hide()
 			body.enemyHit(damageDone)
 			self.queue_free()
