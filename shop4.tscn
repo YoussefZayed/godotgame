@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ojc5535hk82"]
+
+[ext_resource type="PackedScene" uid="uid://c414du41m7bws" path="res://heal_shop_item.tscn" id="1_rc2hy"]
+[ext_resource type="PackedScene" uid="uid://bd2smvw3rd8yx" path="res://speed_upgrade_shop_item.tscn" id="2_6mmfh"]
+
+[node name="Shop" type="Node2D"]
+
+[node name="HealShopItem" parent="." instance=ExtResource("1_rc2hy")]
+position = Vector2(-96, -4)
+cost = 10
+
+[node name="Label" type="Label" parent="."]
+offset_left = -68.0
+offset_top = 224.0
+offset_right = 67.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 40
+text = "Shop"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SpeedShopItem" parent="." instance=ExtResource("2_6mmfh")]
+position = Vector2(74, 3)
+cost = 10
+costIncreaseMultiplier = 5.0
+maxNumberOfTimesBought = 2
