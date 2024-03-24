@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var knockbackForce = 50
 var player_chase = false
 var player = null
-var health = 1
+var health = 3
 var spawnedCoin = false
 var isDieing = false
 @export var coin = preload("res://coin.tscn")
@@ -47,7 +47,7 @@ func death():
 	$EnemyDeath.play()
 	player_chase = false
 	set_sleeping(true)
-	#$CollisionShape2D.set_deferred("disabled", true)
+	$CollisionShape2D.set_deferred("disabled", true)
 	$HurtBox/CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")
 	await get_node("AnimatedSprite2D").animation_finished

@@ -96,6 +96,7 @@ offset_top = 623.0
 offset_right = 433.0
 offset_bottom = 629.0
 scale = Vector2(4, 4)
+max_value = 300.0
 
 [node name="Name" type="Label" parent="CanvasLayer"]
 visible = false

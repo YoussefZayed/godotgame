@@ -1,10 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=44 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
 [ext_resource type="PackedScene" uid="uid://cxm0c1vffj4mw" path="res://ruler.tscn" id="7_3vr35"]
 [ext_resource type="Texture2D" uid="uid://dq3q7g8817gxa" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-back-idle.png" id="7_us4ev"]
-[ext_resource type="Script" path="res://ProgressBar.gd" id="8_ffgjx"]
 [ext_resource type="Texture2D" uid="uid://chp3r06r1ayy0" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-idle.png" id="8_rwtos"]
 [ext_resource type="Texture2D" uid="uid://buiq8dnonook3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-walk.png" id="9_tg4j6"]
 [ext_resource type="Script" path="res://CoinAmountLabel.gd" id="10_1bqbl"]
@@ -420,13 +419,6 @@ stream = ExtResource("11_djrx1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 108.0
-offset_top = 78.0
-offset_right = 278.0
-offset_bottom = 105.0
-script = ExtResource("8_ffgjx")
-
 [node name="CoinAmountLabel" type="Label" parent="CanvasLayer"]
 offset_left = 67.0
 offset_top = 126.0
@@ -436,7 +428,7 @@ text = "Coin amount: "
 label_settings = SubResource("LabelSettings_ktiju")
 script = ExtResource("10_1bqbl")
 
-[node name="HealthBar2" parent="CanvasLayer" instance=ExtResource("14_p1r53")]
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("14_p1r53")]
 offset_left = 53.0
 offset_top = 79.0
 offset_right = 138.0

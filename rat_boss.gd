@@ -15,8 +15,6 @@ signal spawnRats(player)
 @onready var bossName = $CanvasLayer/Name
 
 func _ready():
-	#healthbar.set_visible(false)
-	#bossName.set_visible(false)
 	get_node("AnimatedSprite2D").play("default")
 	healthbar.init_health(health)
 	
@@ -24,9 +22,7 @@ func _process(delta):
 	if (health <= 0 && !isDead):
 		self.die()
 	
-	#if(bossBattle):
-		#healthbar.set_visible(true)
-		#bossName.set_visible(true)
+	
 	
 
 func spawnRuby():
@@ -58,7 +54,7 @@ func die():
 
 func _on_hurt_area_entered(area):
 	if area.name == "Ruler" && player:
-		health -=  player.rulerDamage
+		health -= player.rulerDamage
 		$EnemyHurt.play()
 		print("Boss health: ", health)
 	
@@ -71,6 +67,8 @@ func _on_hurt_area_entered(area):
 		health -= player.proj_damage
 		$EnemyHurt.play()
 		print("Boss health: ", health)
+	
+	healthbar.health = health
 
 
 func _on_spawn_rats_timeout():
