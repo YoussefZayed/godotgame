@@ -33,6 +33,9 @@ func upgradeRuler():
 	weapAnim.speed_scale = rulerSpeed
 	weapon.scale.x = rulerSize
 	weapon.scale.y = rulerSize
+	
+func upgradeSpeed():
+	speed *= 1.1
 
 func playerHit(amount): 
 	health -= amount

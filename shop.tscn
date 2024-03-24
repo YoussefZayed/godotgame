@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnybvsgd3a6fm"]
+[gd_scene load_steps=4 format=3 uid="uid://dnybvsgd3a6fm"]
 
 [ext_resource type="PackedScene" uid="uid://c414du41m7bws" path="res://heal_shop_item.tscn" id="1_xir2x"]
 [ext_resource type="PackedScene" uid="uid://0dtbvi0fxwuh" path="res://ruler_upgrade_shop_item.tscn" id="2_s8b1d"]
+[ext_resource type="PackedScene" uid="uid://bd2smvw3rd8yx" path="res://speed_upgrade_shop_item.tscn" id="3_r88uq"]
 
 [node name="Shop" type="Node2D"]
 
@@ -24,6 +25,7 @@ position = Vector2(0, -3)
 cost = 20
 costIncreaseMultiplier = 2.0
 
-[node name="HealShopItem3" parent="." instance=ExtResource("1_xir2x")]
-position = Vector2(157, 0)
+[node name="SpeedShopItem" parent="." instance=ExtResource("3_r88uq")]
+position = Vector2(174, 1)
 cost = 20
+costIncreaseMultiplier = 2.2

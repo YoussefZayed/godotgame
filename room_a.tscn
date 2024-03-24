@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b62i5odp8bp7"]
+[gd_scene load_steps=18 format=3 uid="uid://b62i5odp8bp7"]
 
 [ext_resource type="Texture2D" uid="uid://dj2py6pcc8o1k" path="res://all art/other - emily/wasd.png" id="1_ctxr4"]
 [ext_resource type="Texture2D" uid="uid://bkdk5xi24882p" path="res://all art/Neko Office Asset Pack/neko-office-tileset.png" id="1_jbdgj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Projectiles.gd" id="9_a4r5p"]
 [ext_resource type="PackedScene" uid="uid://dnybvsgd3a6fm" path="res://shop.tscn" id="9_jwoc1"]
 [ext_resource type="PackedScene" uid="uid://calxxw8t0dcie" path="res://shop2.tscn" id="12_juom4"]
+[ext_resource type="PackedScene" uid="uid://b8pcunshxo72h" path="res://shop3.tscn" id="13_xmi6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xe6tp"]
 texture = ExtResource("1_jbdgj")
@@ -1710,4 +1711,7 @@ position = Vector2(4196, -273)
 script = ExtResource("9_a4r5p")
 
 [node name="Shop2" parent="." instance=ExtResource("12_juom4")]
-position = Vector2(795, -1038)
+position = Vector2(779, -1050)
+
+[node name="Shop3" parent="." instance=ExtResource("13_xmi6g")]
+position = Vector2(1515, 235)

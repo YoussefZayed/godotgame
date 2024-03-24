@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd2smvw3rd8yx"]
+[gd_scene load_steps=6 format=3 uid="uid://bd2smvw3rd8yx"]
 
 [ext_resource type="Texture2D" uid="uid://cdg2dc66qj6o8" path="res://all art/PixelOffice/PixelOfficeAssets.png" id="1_aeph8"]
+[ext_resource type="Script" path="res://speed_upgrade_shop_item.gd" id="1_rbcq1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j1qy"]
 radius = 118.004
@@ -21,6 +22,7 @@ animations = [{
 }]
 
 [node name="SpeedShopItem" type="Node2D"]
+script = ExtResource("1_rbcq1")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -37,8 +39,8 @@ theme_override_font_sizes/font_size = 18
 text = "Buy"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -27)
-scale = Vector2(10.1257, 10.1257)
+position = Vector2(0, -10)
+scale = Vector2(7.91999, 7.91999)
 sprite_frames = SubResource("SpriteFrames_3x5so")
 
 [node name="useLabel" type="Label" parent="."]
