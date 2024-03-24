@@ -21,10 +21,7 @@ func _ready():
 func _process(delta):
 	if (health <= 0 && !isDead):
 		self.die()
-	
-	
-	
-
+		
 func spawnRuby():
 	if !spawnedRuby :
 		spawnedRuby = true
@@ -53,6 +50,8 @@ func die():
 	print("Queue freed")
 
 func _on_hurt_area_entered(area):
+	if (isDead):
+		return
 	if area.name == "Ruler" && player:
 		health -= player.rulerDamage
 		$EnemyHurt.play()

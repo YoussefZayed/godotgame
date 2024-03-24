@@ -36,6 +36,8 @@ func upgradeRuler():
 	
 func upgradeSpeed():
 	speed *= 1.1
+	
+
 
 func playerHit(amount): 
 	health -= amount
@@ -43,6 +45,10 @@ func playerHit(amount):
 	if health <= 0:
 		self.death()
 		
+	healthbar.health = health
+
+func heal():
+	health = maxHealth
 	healthbar.health = health
 	
 func collectMoney(amount):

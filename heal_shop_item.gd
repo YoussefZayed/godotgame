@@ -15,7 +15,7 @@ func _process(delta):
 
 
 func healPlayer():
-	player.health = player.maxHealth
+	player.heal()
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
