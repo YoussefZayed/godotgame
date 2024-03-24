@@ -15,7 +15,7 @@ func _ready():
 func newRound():
 	loopNum += 1
 	player.position = playerPos
-	await self.get_children()[0].queue_free()
+	self.get_children()[0].queue_free()
 	var newLevel = level.instantiate()
 	self.add_child(newLevel)
 	move_child(newLevel,0)
