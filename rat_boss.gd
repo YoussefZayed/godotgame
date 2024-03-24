@@ -14,19 +14,17 @@ signal spawnRats(player)
 @export var timer_secs = 6
 @onready var healthbar = $CanvasLayer/HealthBar
 @onready var bossName = $CanvasLayer/Name
-@export var speed = 50
+@export var speed = 100
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
 	healthbar.init_health(health)
 	
 func _process(delta):
-	if (health <= 0 && !isDead):
-		self.die()
 	if player_chase and !isDead:
-		var distance = player.position - position
+		var distance = player.global_position - self.global_position
 		var direction = (distance).normalized()
-		if position.distance_to(player.position) <= 200:
+		if self.global_position.distance_to(player.global_position) <= 300:
 			direction = -direction
 		
 		velocity = direction * speed#
@@ -36,6 +34,9 @@ func _process(delta):
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
+	
+	if (health <= 0 && !isDead):
+		self.die()
 
 func spawnRuby():
 	if !spawnedRuby :
