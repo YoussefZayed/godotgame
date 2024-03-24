@@ -23,6 +23,7 @@ var ult_ability = preload("res://power_point_ability.tscn")
 var ult_cooldown = true
 var ult_damage = 50
 var proj_damage = 2
+var projAvailable = 3
 
 signal enemy_hit(damage, body)
 
@@ -144,13 +145,18 @@ func _process(delta):
 			weapAnim.play("ruler_attack_front")
 			
 	if Input.is_action_just_pressed("attack_distance"):
-		shoot()
+		if projAvailable > 0:
+			shoot()
+			$LoopTimer.stop()
+			$ReplenishTimer.start(2)
 	
 	await weapAnim.animation_finished
 	weapon.visible = false
 	weaponCollision.set_deferred("disabled", true)
 	
 func shoot():
+	projAvailable -= 1
+	
 	var projectile_instance = projectile.instantiate()
 	projectile_instance.global_position = shoot_position.global_position
 	
@@ -164,3 +170,14 @@ func shoot():
 
 func ultAbilityActive(isActive):
 	ult_ability_active = isActive
+
+
+func _on_replenish_timer_timeout():
+	$LoopTimer.start()
+
+
+func _on_loop_timer_timeout():
+	if projAvailable < 3:
+		projAvailable += 1
+	else:
+		$LoopTimer.stop()
