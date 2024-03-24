@@ -16,6 +16,9 @@ var dir = Vector2.ZERO
 @onready var weapon = $Weapon
 @onready var weaponCollision = $Weapon/Ruler/CollisionShape2D
 @onready var healthbar = $CanvasLayer/HealthBar
+@onready var eraserIcon1 = $CanvasLayer/EraserIcon1
+@onready var eraserIcon2 = $CanvasLayer/EraserIcon2
+@onready var eraserIcon3 = $CanvasLayer/EraserIcon3
 var ult_ability_active = false
 var ult_ability = preload("res://power_point_ability.tscn")
 @export var projectile = preload("res://projectile.tscn")
@@ -119,6 +122,24 @@ func _process(delta):
 			anim.play("idle_back")
 		else:
 			anim.play("idle_front")
+			
+	# Projectile Replenish UI
+	if projAvailable >= 3:
+		eraserIcon1.show()
+		eraserIcon2.show()
+		eraserIcon3.show()
+	elif projAvailable == 2:
+		eraserIcon1.show()
+		eraserIcon2.show()
+		eraserIcon3.hide()
+	elif projAvailable == 1:
+		eraserIcon1.show()
+		eraserIcon2.hide()
+		eraserIcon3.hide()
+	else:
+		eraserIcon1.hide()
+		eraserIcon2.hide()
+		eraserIcon3.hide()
 	
 	
 	if Input.is_action_just_pressed("use_ult") and ult_cooldown and ult_ability_active:

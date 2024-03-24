@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=45 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cgk5hqi08dlxv" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-front-walk.png" id="11_3fmfk"]
 [ext_resource type="AudioStream" uid="uid://gwnh3chlwa3r" path="res://all art/sounds effects/ultAbility.wav" id="11_djrx1"]
 [ext_resource type="AudioStream" uid="uid://nnp8fbtnf2lf" path="res://all art/sounds effects/pickupCoin.wav" id="12_63uxq"]
+[ext_resource type="Texture2D" uid="uid://dqeu1jgigatnr" path="res://all art/other - emily/eraser.png" id="14_idwux"]
 [ext_resource type="PackedScene" uid="uid://bj6br52itu2yd" path="res://health_bar.tscn" id="14_p1r53"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
@@ -434,6 +435,27 @@ offset_top = 79.0
 offset_right = 138.0
 offset_bottom = 86.0
 scale = Vector2(4, 4)
+
+[node name="EraserIcon1" type="TextureRect" parent="CanvasLayer"]
+offset_left = 295.0
+offset_top = 125.0
+offset_right = 315.0
+offset_bottom = 153.0
+texture = ExtResource("14_idwux")
+
+[node name="EraserIcon2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 333.0
+offset_top = 125.0
+offset_right = 353.0
+offset_bottom = 153.0
+texture = ExtResource("14_idwux")
+
+[node name="EraserIcon3" type="TextureRect" parent="CanvasLayer"]
+offset_left = 370.0
+offset_top = 125.0
+offset_right = 390.0
+offset_bottom = 153.0
+texture = ExtResource("14_idwux")
 
 [node name="ShootPosition" type="Marker2D" parent="."]
 
