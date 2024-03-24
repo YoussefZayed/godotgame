@@ -436,3 +436,12 @@ offset_bottom = 86.0
 scale = Vector2(4, 4)
 
 [node name="ShootPosition" type="Marker2D" parent="."]
+
+[node name="ReplenishTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="LoopTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ReplenishTimer" to="." method="_on_replenish_timer_timeout"]
+[connection signal="timeout" from="LoopTimer" to="." method="_on_loop_timer_timeout"]
