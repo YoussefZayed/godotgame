@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 var player = null
 var health = 300
@@ -6,6 +6,7 @@ var bossBattle = false
 var spawnedRuby = false
 var spawnedPickUp = false
 var isDead = false
+var player_chase = false
 signal spawnRats(player)
 
 @export var ruby = preload("res://ruby.tscn")
@@ -13,6 +14,7 @@ signal spawnRats(player)
 @export var timer_secs = 6
 @onready var healthbar = $CanvasLayer/HealthBar
 @onready var bossName = $CanvasLayer/Name
+@export var speed = 50
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
@@ -21,7 +23,19 @@ func _ready():
 func _process(delta):
 	if (health <= 0 && !isDead):
 		self.die()
-	
+	if player_chase and !isDead:
+		var distance = player.position - position
+		var direction = (distance).normalized()
+		if position.distance_to(player.position) <= 200:
+			direction = -direction
+		
+		velocity = direction * speed#
+		move_and_slide()#
+		
+		if (player.position.x - position.x) <0:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
 	
 	
 
@@ -37,11 +51,12 @@ func spawnPickUp():
 		spawnedPickUp = true
 		var newPickUp = pick_up.instantiate()
 		newPickUp.position = self.position
-		newPickUp.position.y -= 200
+		newPickUp.position.y -= 20
 		get_parent().add_child(newPickUp)
 
 func die():
 	isDead = true
+	velocity = Vector2.ZERO
 	$EnemyDeath.play()
 	$CollisionShape2D.set_deferred("disabled", true)
 	#$HurtBox/CollisionShape2D.set_deferred("disabled", true)
@@ -68,7 +83,8 @@ func _on_hurt_area_entered(area):
 		$EnemyHurt.play()
 		print("Boss health: ", health)
 	
-	healthbar.health = health
+	if (!isDead):
+		healthbar.health = health
 
 
 func _on_spawn_rats_timeout():
@@ -80,6 +96,7 @@ func _on_spawn_rats_timeout():
 func _on_detection_area_body_entered(body):
 	if body is Player:
 		player = body
+		player_chase = true
 		if (!bossBattle):
 			healthbar.set_visible(true)
 			bossName.set_visible(true)

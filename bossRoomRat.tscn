@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://0rx5ejynu07n"]
+[gd_scene load_steps=4 format=3 uid="uid://0rx5ejynu07n"]
 
 [ext_resource type="Script" path="res://bossRoomRat.gd" id="1_av0nm"]
 [ext_resource type="PackedScene" uid="uid://cyc2xge3qnmw3" path="res://ratenemy.tscn" id="2_cv088"]
 [ext_resource type="PackedScene" uid="uid://c62pya7s60qyv" path="res://rat_boss.tscn" id="2_itdgs"]
-[ext_resource type="PackedScene" uid="uid://de5irl0n6n61v" path="res://ruby.tscn" id="4_o2g2p"]
-[ext_resource type="PackedScene" uid="uid://dl8k53sdc5o62" path="res://pick_up_power_point.tscn" id="5_ettxb"]
 
 [node name="BossRoomRat" type="Node2D"]
 script = ExtResource("1_av0nm")
@@ -12,9 +10,6 @@ ratEnemy = ExtResource("2_cv088")
 
 [node name="RatBoss" parent="." instance=ExtResource("2_itdgs")]
 position = Vector2(1217, 532)
-ruby = ExtResource("4_o2g2p")
-pick_up = ExtResource("5_ettxb")
-timer_secs = 6
 
 [node name="ratSpawnLocations" type="Node" parent="."]
 
