@@ -7,10 +7,16 @@ var player = null
 var health = 3
 var spawnedCoin = false
 var isDieing = false
+var loopMult = 1
+@export var damage = 2
 @export var coin = preload("res://coin.tscn")
 @onready var healthbar = $HealthBar
 
 func _ready():
+	loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	health = health *loopMult
+	speed = speed * loopMult
+	damage = damage * loopMult
 	$AnimatedSprite2D.play("default")
 	healthbar.init_health(health)
 
@@ -77,7 +83,7 @@ func knockedBack():
 func _on_body_entered(body):
 	if body is Player:
 		knockedBack()
-		body.playerHit(2)
+		body.playerHit(damage)
 		print("Player HIT Player health is: ")
 		print(body.health)
 

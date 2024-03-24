@@ -18,6 +18,10 @@ signal spawnRats(player)
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
+	var loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	health = health *loopMult
+	speed = speed * loopMult
+	
 	healthbar.init_health(health)
 	
 func _process(delta):

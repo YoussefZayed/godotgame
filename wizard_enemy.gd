@@ -16,6 +16,9 @@ var isDieing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("default")
+	var loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	health = health * loopMult
+	speed = speed * loopMult
 	healthbar.init_health(health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
