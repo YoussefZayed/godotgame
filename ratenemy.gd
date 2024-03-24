@@ -46,7 +46,12 @@ func spawnCoin():
 func death():
 	$EnemyDeath.play()
 	player_chase = false
+	print("DEAD")
+	set_physics_process(false)
+	linear_velocity = Vector2.ZERO
 	set_sleeping(true)
+	sleeping = true
+	self.freeze = true
 	$CollisionShape2D.set_deferred("disabled", true)
 	$HurtBox/CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")

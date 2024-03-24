@@ -36,8 +36,6 @@ func _process(delta):
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-	
-	
 
 func spawnRuby():
 	if !spawnedRuby :
@@ -68,6 +66,8 @@ func die():
 	print("Queue freed")
 
 func _on_hurt_area_entered(area):
+	if (isDead):
+		return
 	if area.name == "Ruler" && player:
 		health -= player.rulerDamage
 		$EnemyHurt.play()
