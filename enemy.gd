@@ -6,6 +6,7 @@ var player_chase = false
 var player = null
 #var maxHealth = 20
 var health = 20
+var damage = 5
 var spawnedCoin = false
 var isDieing = false
 @export var coin = preload("res://coin.tscn")
@@ -13,6 +14,10 @@ var isDieing = false
 
 func _ready():
 	$AnimatedSprite2D.play("default")
+	var loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	health = health * loopMult
+	speed = speed * loopMult
+	damage = damage * loopMult
 	healthbar.init_health(health)
 
 func _physics_process(delta):
@@ -22,7 +27,7 @@ func _physics_process(delta):
 		var distance = player.position - position
 		var direction = (distance).normalized()
 		apply_impulse(direction * speed * delta)
-		position += (player.position - position)/(speed+45)
+		position += (player.position - position)/(55)
 		if (player.position.x - position.x) <0:
 			$AnimatedSprite2D.flip_h = true
 		else:
@@ -82,7 +87,7 @@ func knockedBack():
 func _on_body_entered(body):
 	if body is Player:
 		knockedBack()
-		body.playerHit(5.0)
+		body.playerHit(damage)
 		print("Player HIT Player health is: ")
 		print(body.health)
 

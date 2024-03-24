@@ -32,7 +32,7 @@ signal enemy_hit(damage, body)
 
 func upgradeRuler():
 	rulerDamage *= 1.1
-	rulerSpeed *= 1.05
+	rulerSpeed *= 1.025
 	rulerSize *= 1.1
 	weapAnim.speed_scale = rulerSpeed
 	weapon.scale.x = rulerSize

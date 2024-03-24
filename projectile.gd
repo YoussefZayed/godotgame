@@ -3,11 +3,15 @@ extends Area2D
 @export var speed = 5.0
 var direction := Vector2.ZERO
 var damageDone = 7
+var playerDamage = 2
 var enemy = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Length.start()
+	var loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	damageDone = damageDone * loopMult
+	speed = speed * loopMult
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -20,7 +24,6 @@ func set_direction(direction: Vector2):
 
 func _on_body_entered(body):
 	if enemy:
-		damageDone = 7
 		if body.has_method("playerHit"):
 			self.hide()
 			body.playerHit(damageDone)
@@ -29,10 +32,9 @@ func _on_body_entered(body):
 			self.hide()
 			self.queue_free()
 	else:
-		damageDone = 2
 		if body.has_method("enemyHit"):
 			self.hide()
-			body.enemyHit(damageDone)
+			body.enemyHit(playerDamage)
 			self.queue_free()
 		elif body.is_in_group("walls") or body.name == "RatBoss":
 			self.hide()

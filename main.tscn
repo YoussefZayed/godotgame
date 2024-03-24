@@ -8,6 +8,7 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_gxqbk")
+level = ExtResource("2_crmue")
 
 [node name="RoomA" parent="." instance=ExtResource("2_crmue")]
 

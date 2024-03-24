@@ -20,4 +20,5 @@ func _on_body_entered(body):
 		self.hide()
 		$PickUp.play()
 		#await $PickUp.play()
+		get_tree().root.get_child(0).newRound()
 		self.queue_free()
