@@ -72,6 +72,11 @@ shape = SubResource("CircleShape2D_v30jk")
 [node name="spawnRats" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="started" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [node name="detection_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
@@ -110,4 +115,5 @@ text = "Patches the Rat King
 
 [connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_entered"]
 [connection signal="timeout" from="spawnRats" to="." method="_on_spawn_rats_timeout"]
+[connection signal="timeout" from="started" to="." method="_on_started_timeout"]
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]

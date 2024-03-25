@@ -6,7 +6,8 @@ extends Node2D
 
 func _on_rat_boss_spawn_rats(player):
 	print("Spwaning Rats")
-	spawnRat(player)
+	for i in range(get_tree().root.get_child(0).loopNum * 1.5):
+		spawnRat(player)
 	spawnRat(player)
 	
 

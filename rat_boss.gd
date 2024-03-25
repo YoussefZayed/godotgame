@@ -7,6 +7,7 @@ var spawnedRuby = false
 var spawnedPickUp = false
 var isDead = false
 var player_chase = false
+var started = false
 signal spawnRats(player)
 
 @export var ruby = preload("res://ruby.tscn")
@@ -99,7 +100,7 @@ func _on_spawn_rats_timeout():
 
 
 func _on_detection_area_body_entered(body):
-	if body is Player:
+	if body is Player && started:
 		player = body
 		player_chase = true
 		if (!bossBattle):
@@ -110,4 +111,5 @@ func _on_detection_area_body_entered(body):
 			emit_signal("spawnRats",player)
 			bossBattle = true
 			
-	
+func _on_started_timeout():
+	started = true
