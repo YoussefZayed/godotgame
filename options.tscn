@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgvllbnsriisi"]
+[gd_scene load_steps=3 format=3 uid="uid://cgvllbnsriisi"]
 
 [ext_resource type="Script" path="res://options.gd" id="1_owgyb"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="2_scd5t"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -10,6 +11,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_owgyb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.376471, 0.278431, 0.160784, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -30,17 +40,21 @@ layout_mode = 2
 
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_scd5t")
 theme_override_font_sizes/font_size = 25
 text = "Volume"
 
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_scd5t")
 theme_override_font_sizes/font_size = 25
 text = "Controls"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_scd5t")
 theme_override_font_sizes/font_size = 25
 text = "Back"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

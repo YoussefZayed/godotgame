@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0bwxhngfu2ph"]
+[gd_scene load_steps=4 format=3 uid="uid://c0bwxhngfu2ph"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_xyugs"]
 [ext_resource type="Texture2D" uid="uid://b8txnrkw42sj2" path="res://all art/ruler animations - emily/titlescreenimage.png" id="2_pge1t"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="3_ageef"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,16 +46,19 @@ layout_mode = 2
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ageef")
 theme_override_font_sizes/font_size = 35
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ageef")
 theme_override_font_sizes/font_size = 25
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ageef")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
 
@@ -72,6 +76,7 @@ offset_bottom = 41.44
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_ageef")
 theme_override_font_sizes/font_size = 60
 text = "Feline Fury
 An Office Tail"

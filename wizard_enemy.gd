@@ -22,7 +22,7 @@ func _ready():
 	healthbar.init_health(health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if player_chase and !isDieing:
 		var distance = player.position - position
 		var direction = (distance).normalized()

@@ -24,7 +24,7 @@ func _ready():
 	healthbar.max_value = health
 	healthbar.init_health(health)
 	
-func _process(delta):
+func _process(_delta):
 	if player_chase and !isDead:
 		var distance = player.global_position - self.global_position
 		var direction = (distance).normalized()

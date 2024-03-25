@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5cpmvh8uq3c5"]
+[gd_scene load_steps=8 format=3 uid="uid://c5cpmvh8uq3c5"]
 
 [ext_resource type="Script" path="res://pause.gd" id="1_v4ki8"]
 [ext_resource type="Shader" path="res://pause.gdshader" id="2_k2p40"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="3_07tjw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0hjw8"]
 shader = ExtResource("2_k2p40")
@@ -104,23 +105,27 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07tjw")
 theme_override_font_sizes/font_size = 25
 text = "Resume"
 
 [node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07tjw")
 theme_override_font_sizes/font_size = 25
 text = "Restart
 "
 
 [node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07tjw")
 theme_override_font_sizes/font_size = 25
 text = "Main Menu
 "
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_07tjw")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
 

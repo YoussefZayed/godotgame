@@ -27,6 +27,3 @@ func _ready():
 		newEnemy.position = spawnLocations.position
 		get_parent().call_deferred("add_child", newEnemy)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

@@ -3,7 +3,7 @@ extends ShopItem
 
 
 
-func _process(delta):
+func _process(_delta):
 	checkIsDisabled(player && player.health == player.maxHealth)
 	if (!isDisabled):
 		$Button.visible = true

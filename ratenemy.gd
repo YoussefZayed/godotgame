@@ -35,9 +35,9 @@ func _physics_process(delta):
 		isDieing = true
 		self.death()
 
-func enemyHit(damage):
+func enemyHit(amount):
 	print("RAT HIT")
-	health -= damage
+	health -= amount
 	healthbar.health = health
 	$EnemyHurt.play()
 	

@@ -13,7 +13,7 @@ func _ready():
 	cost *= loopMult
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	checkIsDisabled(false)
 	
 func checkIsDisabled(shouldDisable):

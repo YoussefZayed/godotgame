@@ -14,7 +14,7 @@ func _ready():
 	speed = speed * loopMult
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if direction != Vector2.ZERO:
 		var velocity = direction * speed
 		global_position += velocity

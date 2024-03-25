@@ -1,7 +1,7 @@
 extends ShopItem
 
 
-func _process(delta):
+func _process(_delta):
 	checkIsDisabled(false)
 	if (!isDisabled):
 		$Button.visible = true

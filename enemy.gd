@@ -42,8 +42,8 @@ func _physics_process(delta):
 		#player_chase = true
 		
 
-func enemyHit(damage):
-	health -= damage
+func enemyHit(amount):
+	health -= amount
 	healthbar.health = health
 	$EnemyHurt.play()
 	
