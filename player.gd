@@ -40,8 +40,6 @@ func upgradeRuler():
 	
 func upgradeSpeed():
 	speed *= 1.1
-	
-
 
 func playerHit(amount): 
 	health -= amount
@@ -101,6 +99,8 @@ func _process(_delta):
 	#
 	# Dictate all the animations
 	if velocity.length() > 0:
+		if !$Walking.is_playing():
+			$Walking.play()
 		if dir == Vector2.UP:
 			anim.play("walk_back")
 		elif dir == Vector2.DOWN:
@@ -112,6 +112,7 @@ func _process(_delta):
 			anim.play("walk_side");
 			anim.flip_h = false
 	else:
+		$Walking.stop()
 		if dir == Vector2.RIGHT:
 			anim.play("idle_side");
 			anim.flip_h = false
