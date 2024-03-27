@@ -1633,7 +1633,7 @@ layer_0/tile_data = PackedInt32Array(65536, 720896, 6, 131072, 720896, 7, 196608
 [node name="BossRoomRat" parent="." instance=ExtResource("3_2sgw7")]
 position = Vector2(2509, -1996)
 
-[node name="Barrier" type="StaticBody2D" parent="."]
+[node name="Barrier" type="StaticBody2D" parent="." groups=["walls"]]
 position = Vector2(3719, -654)
 
 [node name="Sprite2D" type="Sprite2D" parent="Barrier"]

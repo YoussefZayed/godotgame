@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://de5irl0n6n61v"]
 
 [ext_resource type="Script" path="res://Ruby.gd" id="1_fvqm5"]
-[ext_resource type="Texture2D" uid="uid://mcyusj4ph3uw" path="res://all art/ruby.png" id="2_pnxif"]
+[ext_resource type="Texture2D" uid="uid://mcyusj4ph3uw" path="res://all art/assets - charles/ruby.png" id="2_pnxif"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_svwj7"]
 radius = 20.025

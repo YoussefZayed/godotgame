@@ -10,6 +10,7 @@ signal player_shot_projectile(projectile_instance)
 @export var rulerDamage = 9.1
 @export var rulerSpeed = 0.75
 @export var rulerSize = 1.0
+@export var resetCount = 0
 var dir = Vector2.ZERO
 @onready var anim = $AnimatedSprite2D
 @onready var weapAnim = $AnimationPlayer

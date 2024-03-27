@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var value = 100
+@export var value = 50
 var player:Player
 
 

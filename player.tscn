@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=49 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -13,8 +13,11 @@
 [ext_resource type="AudioStream" uid="uid://gwnh3chlwa3r" path="res://all art/sounds effects/ultAbility.wav" id="11_djrx1"]
 [ext_resource type="AudioStream" uid="uid://nnp8fbtnf2lf" path="res://all art/sounds effects/pickupCoin.wav" id="12_63uxq"]
 [ext_resource type="AudioStream" uid="uid://cpkbjnyrl23gw" path="res://all art/sounds effects/walking.ogg" id="12_qktok"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="13_6swu4"]
 [ext_resource type="Texture2D" uid="uid://dqeu1jgigatnr" path="res://all art/other - emily/eraser.png" id="14_idwux"]
 [ext_resource type="PackedScene" uid="uid://bj6br52itu2yd" path="res://health_bar.tscn" id="14_p1r53"]
+[ext_resource type="FontFile" uid="uid://cjjdfxqsn82gw" path="res://all art/Fonts/PeaberryMono.ttf" id="15_cphya"]
+[ext_resource type="Script" path="res://ResetsLabel.gd" id="16_vl4n2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
 atlas = ExtResource("7_us4ev")
@@ -427,13 +430,24 @@ pitch_scale = 0.73
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CoinAmountLabel" type="Label" parent="CanvasLayer"]
-offset_left = 67.0
+offset_left = 63.0
 offset_top = 126.0
-offset_right = 203.0
+offset_right = 199.0
 offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("13_6swu4")
 text = "Coin amount: "
 label_settings = SubResource("LabelSettings_ktiju")
 script = ExtResource("10_1bqbl")
+
+[node name="ResetsLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1003.0
+offset_top = 79.0
+offset_right = 1155.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("15_cphya")
+theme_override_font_sizes/font_size = 30
+text = "Resets: "
+script = ExtResource("16_vl4n2")
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource("14_p1r53")]
 offset_left = 53.0

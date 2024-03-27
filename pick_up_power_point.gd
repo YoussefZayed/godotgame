@@ -14,5 +14,7 @@ func _on_body_entered(body):
 		#await $PickUp.play()
 		player.health = player.maxHealth
 		player.healthbar.health = player.health
+		player.resetCount += 1
+		player.projAvailable = 3
 		get_tree().root.get_child(0).newRound()
 		self.queue_free()
