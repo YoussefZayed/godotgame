@@ -1,0 +1,238 @@
+[gd_scene load_steps=8 format=3 uid="uid://xgm7x7hrmkqy"]
+
+[ext_resource type="Script" path="res://cutscene.gd" id="1_7dpwe"]
+[ext_resource type="Texture2D" uid="uid://cv4d8r0fo7mye" path="res://all art/other - emily/cat-office-white-back-idle_scaled_40x_pngcrushed.png" id="1_aoe7q"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="2_vhpdq"]
+[ext_resource type="FontFile" uid="uid://cjjdfxqsn82gw" path="res://all art/Fonts/PeaberryMono.ttf" id="4_8ntty"]
+
+[sub_resource type="Animation" id="Animation_d3cmt"]
+resource_name = "Dialog"
+length = 32.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.7, 16.5, 26.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["What-- Where am I?", "Chosen? For what?", "Test? Alternate dimension? But I'm just an office worker!", "Oh no... what did I get into?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cat-office-white-back-idleScaled40xPngcrushed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 30.6, 32.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(638, 792), Vector2(638, 625), Vector2(638, 625), Vector2(638, 867)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GodLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 11.5, 22),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["You have been chosen.", "You will travel to an alternate dimension, and test your metal.", "Let's see how long you can succeed..."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 2, 2.4, 3.2, 4.5, 4.6, 7.9, 8.7, 9.4, 10.4, 11.5, 11.6, 16.7, 17.2, 17.5, 18.4, 18.8, 20.4, 22, 22.1, 26.5, 27.3, 27.7, 29.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.4, 0.4, 1.0, 1.0, 0.0, 0.0, 0.446, 0.446, 1.0, 1.0, 0.0, 0.0, 0.105, 0.105, 0.466, 0.466, 1.0, 1.0, 0.0, 0.0, 0.277, 0.277, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GodLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.7, 6.1, 7.7, 7.8, 11.7, 13.6, 14, 15.1, 16.5, 16.6, 22.2, 24.7, 26.3, 26.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.675, 0.675, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.5, 7.9, 11.5, 16.7, 22, 26.5, 30.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GodLabel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 7.7, 11.7, 16.5, 22.2, 26.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2cetl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cat-office-white-back-idleScaled40xPngcrushed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(638, 736)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GodLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerLabel:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GodLabel:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("GodLabel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tb3d7"]
+_data = {
+"Dialog": SubResource("Animation_d3cmt"),
+"RESET": SubResource("Animation_2cetl")
+}
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_7dpwe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tb3d7")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.258824, 0.223529, 0.2, 1)
+
+[node name="Cat-office-white-back-idleScaled40xPngcrushed" type="Sprite2D" parent="."]
+position = Vector2(638, 736)
+scale = Vector2(0.502344, 0.508594)
+texture = ExtResource("1_aoe7q")
+
+[node name="SkipButton" type="Button" parent="."]
+offset_left = 1130.0
+offset_top = 632.0
+offset_right = 1241.0
+offset_bottom = 680.0
+theme_override_fonts/font = ExtResource("2_vhpdq")
+theme_override_font_sizes/font_size = 40
+text = "SKIP"
+
+[node name="PlayerLabel" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 410.0
+offset_right = 1183.0
+offset_bottom = 441.0
+theme_override_fonts/font = ExtResource("4_8ntty")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="GodLabel" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 66.0
+offset_right = 1239.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="button_up" from="SkipButton" to="." method="_on_skip_button_button_up"]
