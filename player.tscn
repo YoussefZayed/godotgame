@@ -419,7 +419,7 @@ stream = ExtResource("11_djrx1")
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_qktok")
-volume_db = -4.952
+volume_db = -10.0
 pitch_scale = 0.73
 
 [node name="Marker2D" type="Marker2D" parent="."]
