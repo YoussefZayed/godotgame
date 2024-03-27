@@ -62,6 +62,7 @@ func die():
 	isDead = true
 	velocity = Vector2.ZERO
 	$EnemyDeath.play()
+	$BossMusic.stop()
 	$CollisionShape2D.set_deferred("disabled", true)
 	#$HurtBox/CollisionShape2D.set_deferred("disabled", true)
 	get_node("AnimatedSprite2D").play("death")
@@ -106,6 +107,7 @@ func _on_detection_area_body_entered(body):
 		if (!bossBattle):
 			healthbar.set_visible(true)
 			bossName.set_visible(true)
+			$BossMusic.play()
 			print("Battle Rats")
 			$spawnRats.start(timer_secs)
 			emit_signal("spawnRats",player)

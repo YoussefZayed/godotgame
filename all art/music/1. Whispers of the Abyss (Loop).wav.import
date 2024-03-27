@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://de6blno0tccj4"
+path="res://.godot/imported/1. Whispers of the Abyss (Loop).wav-29eb26f228da19d1e72030dbc1a1a58c.sample"
+
+[deps]
+
+source_file="res://all art/music/1. Whispers of the Abyss (Loop).wav"
+dest_files=["res://.godot/imported/1. Whispers of the Abyss (Loop).wav-29eb26f228da19d1e72030dbc1a1a58c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

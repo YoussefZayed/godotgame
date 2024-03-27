@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c62pya7s60qyv"]
+[gd_scene load_steps=17 format=3 uid="uid://c62pya7s60qyv"]
 
 [ext_resource type="Texture2D" uid="uid://c5yv3a00qa2m6" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0124.png" id="1_0vxxa"]
 [ext_resource type="Script" path="res://rat_boss.gd" id="1_1oabs"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://benndmddp3t2f" path="res://all art/explosion animations - emily/explosion5.png" id="6_2mdpx"]
 [ext_resource type="Texture2D" uid="uid://wbcsvy88yw70" path="res://all art/explosion animations - emily/explosion6.png" id="7_um0fr"]
 [ext_resource type="PackedScene" uid="uid://bj6br52itu2yd" path="res://health_bar.tscn" id="11_07avw"]
+[ext_resource type="AudioStream" uid="uid://b6hvii3b583wy" path="res://all art/music/6. Veil of Eternal Nightfall (Loop).wav" id="12_ag4v2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ydnv0"]
 animations = [{
@@ -112,6 +113,10 @@ theme_override_font_sizes/font_size = 25
 text = "Patches the Rat King
 
 "
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_ag4v2")
+volume_db = -5.0
 
 [connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_entered"]
 [connection signal="timeout" from="spawnRats" to="." method="_on_spawn_rats_timeout"]
