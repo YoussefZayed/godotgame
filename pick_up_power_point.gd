@@ -2,8 +2,6 @@ extends Area2D
 
 var player = null
 
-
-
 func _on_body_entered(body):
 	if body is Player:  
 		'''and $PickUp.is_playing() == false'''

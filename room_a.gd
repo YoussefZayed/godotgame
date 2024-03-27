@@ -1,4 +1,5 @@
 extends Node2D
+class_name RoomA
 
 @onready var barrier = $Barrier
 @onready var barrierCollision = $Barrier/CollisionShape2D

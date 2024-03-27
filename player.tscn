@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=48 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -374,8 +374,6 @@ _data = {
 "ruler_attack_right": SubResource("Animation_oddlr")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_ktiju"]
-
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_3w1j7")
@@ -430,13 +428,13 @@ pitch_scale = 0.73
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CoinAmountLabel" type="Label" parent="CanvasLayer"]
-offset_left = 63.0
-offset_top = 126.0
-offset_right = 199.0
-offset_bottom = 149.0
+offset_left = 61.0
+offset_top = 130.0
+offset_right = 204.0
+offset_bottom = 153.0
 theme_override_fonts/font = ExtResource("13_6swu4")
+theme_override_font_sizes/font_size = 20
 text = "Coin amount: "
-label_settings = SubResource("LabelSettings_ktiju")
 script = ExtResource("10_1bqbl")
 
 [node name="ResetsLabel" type="Label" parent="CanvasLayer"]
