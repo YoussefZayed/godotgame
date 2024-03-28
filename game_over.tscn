@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1mnrpkyjtrti"]
+[gd_scene load_steps=5 format=3 uid="uid://c1mnrpkyjtrti"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_8a0ia"]
+[ext_resource type="FontFile" uid="uid://byiwspjptarox" path="res://all art/Fonts/PeaberryDoublespace.ttf" id="2_q35i7"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="3_q36ot"]
+[ext_resource type="FontFile" uid="uid://cjjdfxqsn82gw" path="res://all art/Fonts/PeaberryMono.ttf" id="4_jnkc4"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -22,13 +25,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -171.5
-offset_top = 100.0
-offset_right = 171.5
-offset_bottom = 183.0
+offset_left = -212.0
+offset_top = 128.0
+offset_right = 214.0
+offset_bottom = 211.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.85098, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("2_q35i7")
+theme_override_font_sizes/font_size = 70
 text = "GAME OVER"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -50,18 +54,30 @@ layout_mode = 2
 
 [node name="TryAgain" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q36ot")
 theme_override_font_sizes/font_size = 25
 text = "Try Again"
 
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q36ot")
 theme_override_font_sizes/font_size = 25
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q36ot")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
+
+[node name="ResetsLabel" type="Label" parent="."]
+offset_left = 551.0
+offset_top = 210.0
+offset_right = 703.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("4_jnkc4")
+theme_override_font_sizes/font_size = 30
+text = "Resets: "
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
