@@ -51,7 +51,9 @@ func playerHit(amount):
 	healthbar.health = health
 
 func heal():
-	health = maxHealth
+	health += 35
+	if health > maxHealth:
+		health = maxHealth
 	healthbar.health = health
 	
 func collectMoney(amount):
