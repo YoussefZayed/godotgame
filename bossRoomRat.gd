@@ -8,7 +8,7 @@ signal spawnDoor()
 func _on_rat_boss_spawn_rats(player):
 	print("Spwaning Rats")
 	emit_signal("spawnDoor")
-	for i in range(get_tree().root.get_child(0).loopNum * 1.5):
+	for i in range(get_tree().root.get_child(0).loopNum * 1.5 + 1):
 		spawnRat(player)
 	spawnRat(player)
 	

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var player = null
-var health = 300
+var health = 1000
 var bossBattle = false
 var spawnedRuby = false
 var spawnedPickUp = false
@@ -15,7 +15,7 @@ signal spawnRats(player)
 @export var timer_secs = 6
 @onready var healthbar = $CanvasLayer/HealthBar
 @onready var bossName = $CanvasLayer/Name
-@export var speed = 100
+@export var speed = 150
 
 func _ready():
 	get_node("AnimatedSprite2D").play("default")
@@ -96,7 +96,7 @@ func _on_hurt_area_entered(area):
 
 func _on_spawn_rats_timeout():
 	if (!isDead):
-		$spawnRats.start(timer_secs * (health/300) + 1.75)
+		$spawnRats.start(timer_secs * (health/1000) + 1)
 		emit_signal("spawnRats", player)
 
 
