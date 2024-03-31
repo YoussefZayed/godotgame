@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$ResetsLabel.text = "Resets: "
+	$ResetsLabel.text = "Resets: " + str(ResetsSingleton.resets)
 
 func _on_try_again_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")

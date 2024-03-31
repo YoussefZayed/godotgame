@@ -9,7 +9,7 @@ var isDisabled = false
 @export var maxNumberOfTimesBought = 3
 
 func _ready():
-	var loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	var loopMult = pow(1.5, get_tree().root.get_node("/root/Main").loopNum)
 	cost *= loopMult
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

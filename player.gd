@@ -62,6 +62,7 @@ func collectMoney(amount):
 	return money
 
 func death():
+	ResetsSingleton.resets = resetCount
 	get_tree().change_scene_to_file("res://game_over.tscn")
 
 func _ready():

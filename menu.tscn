@@ -84,7 +84,7 @@ grow_vertical = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("3_ageef")
 theme_override_font_sizes/font_size = 60
-text = "Feline Fury
+text = "Feline Fury:
 An Office Tail"
 horizontal_alignment = 1
 

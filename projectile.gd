@@ -9,7 +9,7 @@ var enemy = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Length.start()
-	var loopMult = pow(1.5, get_tree().root.get_child(0).loopNum)
+	var loopMult = pow(1.5, get_tree().root.get_node("/root/Main").loopNum)
 	damageDone = damageDone * loopMult
 	speed = speed * loopMult
 
