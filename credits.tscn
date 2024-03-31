@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0n40mtp41mox"]
+
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="1_dunrp"]
+[ext_resource type="Script" path="res://credits.gd" id="1_qwt5c"]
+[ext_resource type="FontFile" uid="uid://byiwspjptarox" path="res://all art/Fonts/PeaberryDoublespace.ttf" id="3_fco1b"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwt5c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.321569, 0.329412, 1)
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 30.0
+offset_right = 158.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("1_dunrp")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 35.0
+offset_right = 1111.0
+offset_bottom = 693.0
+theme_override_fonts/normal_font = ExtResource("1_dunrp")
+theme_override_fonts/bold_font = ExtResource("3_fco1b")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[center][b]Enemy Sprites:[/b]
+Kenney
+
+[b]Fonts:[/b]
+emhuo
+
+[b]Map Assets:[/b]
+Kenney
+HelloRumin 
+
+[b]Music:[/b]
+alkakrab 
+
+[b]Player Assets:[/b]
+HelloRumin
+
+[b]Sound Effects:[/b]
+Kenney
+DrPetter"
+fit_content = true
+
+[connection signal="button_up" from="Back" to="." method="_on_back_button_up"]
