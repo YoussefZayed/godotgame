@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bscp5ftqdbkn8"
+path="res://.godot/imported/Sci-Fi 6 Loop.mp3-6479c3557bc352515645121c34536e2d.mp3str"
+
+[deps]
+
+source_file="res://all art/music/Sci-Fi 6 Loop.mp3"
+dest_files=["res://.godot/imported/Sci-Fi 6 Loop.mp3-6479c3557bc352515645121c34536e2d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

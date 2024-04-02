@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b62i5odp8bp7"]
+[gd_scene load_steps=25 format=3 uid="uid://b62i5odp8bp7"]
 
 [ext_resource type="Texture2D" uid="uid://dj2py6pcc8o1k" path="res://all art/other - emily/wasd.png" id="1_ctxr4"]
 [ext_resource type="Script" path="res://room_a.gd" id="1_f5din"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cblpyeh1docst" path="res://all art/kenney_tiny-dungeon/Tiles/tile_0028.png" id="8_h31ms"]
 [ext_resource type="Script" path="res://Projectiles.gd" id="9_a4r5p"]
 [ext_resource type="PackedScene" uid="uid://dnybvsgd3a6fm" path="res://shop.tscn" id="9_jwoc1"]
+[ext_resource type="AudioStream" uid="uid://bscp5ftqdbkn8" path="res://all art/music/Sci-Fi 6 Loop.mp3" id="10_055hd"]
 [ext_resource type="PackedScene" uid="uid://calxxw8t0dcie" path="res://shop2.tscn" id="12_juom4"]
 [ext_resource type="PackedScene" uid="uid://b8pcunshxo72h" path="res://shop3.tscn" id="13_xmi6g"]
 [ext_resource type="PackedScene" uid="uid://b7ojc5535hk82" path="res://shop4.tscn" id="14_xdwrb"]
@@ -1758,3 +1759,7 @@ position = Vector2(1515, 235)
 
 [node name="Shop4" parent="." instance=ExtResource("14_xdwrb")]
 position = Vector2(3618, 898)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_055hd")
+volume_db = -11.0
