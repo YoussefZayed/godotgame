@@ -57,7 +57,7 @@ radius = 293.015
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7pmb"]
 size = Vector2(38, 39)
 
-[node name="WizardEnemy" type="CharacterBody2D"]
+[node name="WizardEnemy" type="CharacterBody2D" groups=["characters"]]
 script = ExtResource("1_o00ni")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

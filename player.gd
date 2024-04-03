@@ -153,12 +153,12 @@ func _process(_delta):
 		pointerIcon.set_visible(true)
 		rKey.set_visible(true)
 		if (kills < 10):
-			#$CanvasLayer/TextureRect.modulate.a = 0.5
+			pointerIcon.modulate.a = 0.5
 			ult_charged = false
 		else:
 			kills = 10
 			ult_charged = true
-			#$CanvasLayer/TextureRect.modulate.a = 1
+			pointerIcon.modulate.a = 1
 	else:
 		kills = 0
 			

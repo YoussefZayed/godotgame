@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var speed = 18
 @export var knockbackForce = 100
 var player_chase = false
-var player = null
+@onready var player = get_tree().get_nodes_in_group("characters")[get_tree().get_nodes_in_group("characters").size() - 1]
 #var maxHealth = 20
 var health = 20
 var damage = 5
@@ -19,6 +19,7 @@ func _ready():
 	speed = speed * loopMult
 	damage = damage * loopMult
 	healthbar.init_health(health)
+
 
 func _physics_process(delta):
 	
@@ -76,6 +77,7 @@ func _on_detection_area_body_entered(body):
 	if body is Player:
 		player = body
 		player_chase = true
+		
 	
 
 #func _on_detection_area_body_exited(_body):
@@ -96,11 +98,15 @@ func _on_body_entered(body):
 
 func _on_hurt_box_area_entered(area):
 	if area.name == "Ruler" && player:
+		print(player)
 		self.enemyHit(player.rulerDamage)
 		print("Enemy health: ", health)
 		knockedBack()
 
-	if area.name == "PowerPointAbility":
+	if area.name == "PowerPointAbility" && player:
 		self.enemyHit(player.ult_damage)
 		print("Enemy health: ", health)
 		knockedBack()
+
+
+

@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 75
 @export var knockbackForce = 25
 var player_chase = false
-var player = null
+@onready var player = get_tree().get_nodes_in_group("characters")[get_tree().get_nodes_in_group("characters").size() - 1]
 var health = 30
 var spawned1Coin = false
 var spawned2Coin = false

@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var speed = 150
 @export var knockbackForce = 50
 var player_chase = false
-var player = null
+@onready var player = get_tree().get_nodes_in_group("characters")[get_tree().get_nodes_in_group("characters").size() - 1]
 var health = 3
 var spawnedCoin = false
 var isDieing = false
