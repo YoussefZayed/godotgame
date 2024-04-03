@@ -61,6 +61,8 @@ func spawnCoin():
 func death():
 	$EnemyDeath.play()
 	player_chase = false
+	player.kills += 1
+	print(player.kills)
 	set_sleeping(true)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$HurtBox/CollisionShape2D.set_deferred("disabled", true)

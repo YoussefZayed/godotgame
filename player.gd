@@ -20,14 +20,17 @@ var dir = Vector2.ZERO
 @onready var eraserIcon1 = $CanvasLayer/EraserIcon1
 @onready var eraserIcon2 = $CanvasLayer/EraserIcon2
 @onready var eraserIcon3 = $CanvasLayer/EraserIcon3
+@onready var abilityCharge = $CanvasLayer/AbilityCharge
+@onready var pointerIcon = $CanvasLayer/PointerIcon
 var ult_ability_active = false
 var ult_ability = preload("res://power_point_ability.tscn")
 @export var projectile = preload("res://projectile.tscn")
 @onready var shoot_position = $ShootPosition
-var ult_cooldown = true
+var ult_charged = false
 var ult_damage = 50
 var proj_damage = 2
 var projAvailable = 3
+var kills = 0
 
 signal enemy_hit(damage, body)
 
@@ -70,10 +73,6 @@ func _ready():
 	weaponCollision.set_deferred("disabled", true)
 	healthbar.init_health(health)
 	weapAnim.speed_scale = rulerSpeed
-
-
-func use_ult_ability():
-	ult_ability
 	
 
 func _process(_delta):
@@ -146,17 +145,29 @@ func _process(_delta):
 		eraserIcon2.hide()
 		eraserIcon3.hide()
 	
+
 	
-	if Input.is_action_just_pressed("use_ult") and ult_cooldown and ult_ability_active:
+	if ult_ability_active:
+		abilityCharge.set_visible(true)
+		pointerIcon.set_visible(true)
+		if (kills < 10):
+			#$CanvasLayer/TextureRect.modulate.a = 0.5
+			ult_charged = false
+		else:
+			kills = 10
+			ult_charged = true
+			#$CanvasLayer/TextureRect.modulate.a = 1
+	else:
+		kills = 0
+			
+	
+	if Input.is_action_just_pressed("use_ult") and ult_charged and ult_ability_active:
 		$UltAbility.play()
-		ult_cooldown = false
+		kills = 0
 		var ult_instance = ult_ability.instantiate()
 		ult_instance.rotation = $Marker2D.rotation
 		ult_instance.global_position = $Marker2D.global_position
 		add_child(ult_instance)
-		
-		await get_tree().create_timer(5).timeout
-		ult_cooldown = true
 	
 	if Input.is_action_just_pressed("attack_melee"):
 		weapon.visible = true

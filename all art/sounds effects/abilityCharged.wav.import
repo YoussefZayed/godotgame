@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1g6lvxl8jnje"
+path="res://.godot/imported/abilityCharged.wav-39d9dc830350942ff3c5bd9aeaf24be2.sample"
+
+[deps]
+
+source_file="res://all art/sounds effects/abilityCharged.wav"
+dest_files=["res://.godot/imported/abilityCharged.wav-39d9dc830350942ff3c5bd9aeaf24be2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

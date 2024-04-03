@@ -482,7 +482,6 @@ offset_bottom = 153.0
 texture = ExtResource("14_idwux")
 
 [node name="AbilityCharge" type="Label" parent="CanvasLayer"]
-visible = false
 offset_left = 49.0
 offset_top = 646.0
 offset_right = 89.0
@@ -492,8 +491,7 @@ theme_override_font_sizes/font_size = 20
 text = "/10"
 script = ExtResource("19_4cijg")
 
-[node name="PointerIcon" type="TextureRect" parent="CanvasLayer"]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_left = 121.0
 offset_top = 633.0
 offset_right = 161.0

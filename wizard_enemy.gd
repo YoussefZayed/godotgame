@@ -49,6 +49,7 @@ func enemyHit(damage):
 func death():
 	$ShootProjectile.stop()
 	$EnemyDeath.play()
+	player.kills += 1
 	player_chase = false
 	velocity = Vector2.ZERO
 	$CollisionShape2D.set_deferred("disabled", true)

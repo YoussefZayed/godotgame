@@ -53,6 +53,7 @@ func death():
 	$EnemyDeath.play()
 	player_chase = false
 	print("DEAD")
+	player.kills += 1
 	set_physics_process(false)
 	linear_velocity = Vector2.ZERO
 	set_sleeping(true)
