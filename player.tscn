@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cyqpd2yyfbeu1"]
+[gd_scene load_steps=52 format=3 uid="uid://cyqpd2yyfbeu1"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_3w1j7"]
 [ext_resource type="Texture2D" uid="uid://ujlxwtvsg6r3" path="res://all art/Neko Office Asset Pack/Characters/cat-office-white-side-idle.png" id="4_kexbk"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://ResetsLabel.gd" id="16_vl4n2"]
 [ext_resource type="Script" path="res://Kills.gd" id="19_4cijg"]
 [ext_resource type="Texture2D" uid="uid://ceyw6w1rdiqml" path="res://all art/assets - charles/mouse-pointer.png" id="20_6u5sg"]
+[ext_resource type="Texture2D" uid="uid://dn5jvc5bb8bbs" path="res://all art/other - emily/rkey.png" id="22_il1p8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jupo4"]
 atlas = ExtResource("7_us4ev")
@@ -499,6 +500,15 @@ offset_top = 633.0
 offset_right = 161.0
 offset_bottom = 673.0
 texture = ExtResource("20_6u5sg")
+
+[node name="RKey" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 82.0
+offset_top = 563.0
+offset_right = 156.0
+offset_bottom = 627.0
+texture = ExtResource("22_il1p8")
+expand_mode = 1
 
 [node name="ShootPosition" type="Marker2D" parent="."]
 

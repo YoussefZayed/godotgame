@@ -22,6 +22,7 @@ var dir = Vector2.ZERO
 @onready var eraserIcon3 = $CanvasLayer/EraserIcon3
 @onready var abilityCharge = $CanvasLayer/AbilityCharge
 @onready var pointerIcon = $CanvasLayer/PointerIcon
+@onready var rKey = $CanvasLayer/RKey
 var ult_ability_active = false
 var ult_ability = preload("res://power_point_ability.tscn")
 @export var projectile = preload("res://projectile.tscn")
@@ -150,6 +151,7 @@ func _process(_delta):
 	if ult_ability_active:
 		abilityCharge.set_visible(true)
 		pointerIcon.set_visible(true)
+		rKey.set_visible(true)
 		if (kills < 10):
 			#$CanvasLayer/TextureRect.modulate.a = 0.5
 			ult_charged = false
