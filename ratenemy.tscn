@@ -95,12 +95,10 @@ shape = SubResource("CapsuleShape2D_g7k4e")
 
 [node name="EnemyHurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_yb7e4")
-bus = &"sfx"
 
 [node name="EnemyDeath" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_kpa6x")
 volume_db = -10.0
-bus = &"sfx"
 
 [node name="HealthBar" parent="." instance=ExtResource("11_bjobu")]
 offset_left = -27.0

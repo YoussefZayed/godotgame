@@ -85,12 +85,10 @@ shape = SubResource("CircleShape2D_8ni3g")
 
 [node name="EnemyHurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ibf7y")
-bus = &"sfx"
 
 [node name="EnemyDeath" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_rb55g")
 volume_db = -10.0
-bus = &"sfx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aov5q")
@@ -118,7 +116,6 @@ text = "Patches the Rat King
 
 [node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ag4v2")
-bus = &"music"
 
 [connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_entered"]
 [connection signal="timeout" from="spawnRats" to="." method="_on_spawn_rats_timeout"]
