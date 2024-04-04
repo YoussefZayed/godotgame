@@ -27,14 +27,6 @@ func _ready():
 	
 func _process(_delta):
 	if player_chase and !isDead:
-		var distance = player.global_position - self.global_position
-		var direction = (distance).normalized()
-		if self.global_position.distance_to(player.global_position) <= 300:
-			direction = -direction
-		
-		velocity = direction * speed#
-		move_and_slide()#
-		
 		if (player.position.x - position.x) <0:
 			$AnimatedSprite2D.flip_h = true
 		else:
@@ -60,7 +52,7 @@ func spawnPickUp():
 
 func die():
 	isDead = true
-	velocity = Vector2.ZERO
+	get_tree().root.get_node("/root/Main/RoomA/BossRoomRat/Paths").activate = false
 	$EnemyDeath.play()
 	$BossMusic.stop()
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -104,6 +96,8 @@ func _on_detection_area_body_entered(body):
 		player = body
 		player_chase = true
 		if (!bossBattle):
+			get_tree().root.get_node("/root/Main/RoomA/BossRoomRat/Paths").activate = true
+			get_tree().root.get_node("/root/Main/RoomA/BossRoomRat/Paths").bossSpeed = speed
 			healthbar.set_visible(true)
 			bossName.set_visible(true)
 			$BossMusic.play()
