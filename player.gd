@@ -33,6 +33,7 @@ var proj_damage = 2
 var projAvailable = 3
 var kills = 0
 
+
 signal enemy_hit(damage, body)
 
 func upgradeRuler():
