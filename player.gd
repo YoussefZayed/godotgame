@@ -2,12 +2,12 @@ extends CharacterBody2D
 class_name Player
 signal player_shot_projectile(projectile_instance)
 
-@export var speed = 200.0
+@export var speed = 500.0
 @export var money = 0
 @export var maxHealth = 100
 @export var health = 100
 @export var damage = 10
-@export var rulerDamage = 9.1
+@export var rulerDamage = 900.1
 @export var rulerSpeed = 0.75
 @export var rulerSize = 1.0
 @export var resetCount = 0
@@ -32,6 +32,7 @@ var ult_damage = 150
 var proj_damage = 2
 var projAvailable = 3
 var kills = 0
+
 
 signal enemy_hit(damage, body)
 
