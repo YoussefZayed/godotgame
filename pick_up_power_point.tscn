@@ -23,5 +23,6 @@ shape = SubResource("CapsuleShape2D_lsrhk")
 
 [node name="PickUp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_in13n")
+bus = &"sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
