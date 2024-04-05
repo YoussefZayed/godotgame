@@ -116,7 +116,6 @@ text = "Patches the Rat King
 
 [node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ag4v2")
-bus = &"music"
 
 [connection signal="area_entered" from="hurt_area" to="." method="_on_hurt_area_entered"]
 [connection signal="timeout" from="spawnRats" to="." method="_on_spawn_rats_timeout"]

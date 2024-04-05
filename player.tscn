@@ -414,26 +414,21 @@ position_smoothing_speed = 10.0
 [node name="PlayerHurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_0uqda")
 volume_db = -4.956
-bus = &"sfx"
 
 [node name="PickupCoin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_63uxq")
 volume_db = -5.0
-bus = &"sfx"
 
 [node name="UltAbility" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_djrx1")
-bus = &"sfx"
 
 [node name="Walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_qktok")
 volume_db = -10.0
 pitch_scale = 0.73
-bus = &"sfx"
 
 [node name="AbilityCharged" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_1k5hj")
-bus = &"sfx"
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
