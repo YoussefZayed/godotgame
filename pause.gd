@@ -42,3 +42,7 @@ func _process(_delta):
 func _on_main_menu_pressed():
 	resume()
 	get_tree().change_scene_to_file("res://menu.tscn")
+
+
+func _on_options_pressed():
+	pass # Replace with function body.

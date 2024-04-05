@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://bdlldnybdsxh2"]
+[gd_scene load_steps=4 format=3 uid="uid://bdlldnybdsxh2"]
+
+[ext_resource type="Script" path="res://volume.gd" id="1_0ywhl"]
+[ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="1_1x260"]
+[ext_resource type="PackedScene" uid="uid://bik8phn88gm8e" path="res://volume_slider.tscn" id="1_pow68"]
 
 [node name="Volume" type="Control"]
 layout_mode = 3
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0ywhl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -15,4 +20,89 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.376471, 0.278431, 0.160784, 1)
+color = Color(0.211765, 0.321569, 0.329412, 1)
+
+[node name="AudioLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_top = 75.0
+offset_right = 232.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_1x260")
+theme_override_font_sizes/font_size = 60
+text = "Audio Options
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = -107.0
+offset_right = 190.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="MasterLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_1x260")
+theme_override_font_sizes/font_size = 50
+text = "Master Volume
+"
+
+[node name="master" parent="MarginContainer/VBoxContainer/MasterLabel" instance=ExtResource("1_pow68")]
+layout_mode = 2
+offset_left = 0.0
+offset_top = 71.0
+offset_right = 190.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+value = 1.0
+bus_name = "Master"
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_1x260")
+theme_override_font_sizes/font_size = 50
+text = "Music Volume"
+
+[node name="music" parent="MarginContainer/VBoxContainer/MusicLabel" instance=ExtResource("1_pow68")]
+layout_mode = 2
+offset_left = -17.0
+offset_top = 71.0
+offset_right = 173.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+value = 1.0
+bus_name = "music"
+
+[node name="SfxLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_1x260")
+theme_override_font_sizes/font_size = 50
+text = "SFX Volume"
+
+[node name="sfx" parent="MarginContainer/VBoxContainer/SfxLabel" instance=ExtResource("1_pow68")]
+layout_mode = 2
+offset_left = -42.0
+offset_top = 71.0
+offset_right = 148.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+value = 1.0
+bus_name = "sfx"

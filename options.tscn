@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.376471, 0.278431, 0.160784, 1)
+color = Color(0.211765, 0.321569, 0.329412, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -28,32 +28,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -84.5
-offset_top = -59.5
-offset_right = 84.5
-offset_bottom = 59.5
+offset_left = -142.0
+offset_top = -135.5
+offset_right = 142.0
+offset_bottom = 135.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_scd5t")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 50
 text = "Volume"
 
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_scd5t")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 50
 text = "Controls"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_scd5t")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 50
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
