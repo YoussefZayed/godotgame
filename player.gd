@@ -67,7 +67,6 @@ func collectMoney(amount):
 	return money
 
 func death():
-	ResetsSingleton.resets = resetCount
 	get_tree().change_scene_to_file("res://game_over.tscn")
 
 func _ready():
@@ -78,6 +77,8 @@ func _ready():
 	
 
 func _process(_delta):
+	ResetsSingleton.resets = resetCount
+	
 	var direction = Input.get_vector("move_left", "move_right","move_up", "move_down").normalized()
 	
 	if direction:

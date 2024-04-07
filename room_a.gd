@@ -14,7 +14,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if ResetsSingleton.resets > 0:
+		$InstructLabel.show()
+		$RKeyTexture.show()
+		$PowerPoint.show()
+	else:
+		$InstructLabel.hide()
+		$RKeyTexture.hide()
+		$PowerPoint.hide()
 
 func _on_boss_room_rat_spawn_barrier():
 	music.stop()
