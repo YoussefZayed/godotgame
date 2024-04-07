@@ -9,6 +9,7 @@ var isDead = false
 var player_chase = false
 var started = false
 signal spawnRats(player)
+signal ratBossMove(sp)
 
 @export var ruby = preload("res://ruby.tscn")
 @export var pick_up = preload("res://pick_up_power_point.tscn")
@@ -96,8 +97,7 @@ func _on_detection_area_body_entered(body):
 		player = body
 		player_chase = true
 		if (!bossBattle):
-			get_tree().root.get_node("/root/Main/RoomA/BossRoomRat/Paths").activate = true
-			get_tree().root.get_node("/root/Main/RoomA/BossRoomRat/Paths").bossSpeed = speed
+			emit_signal("ratBossMove", speed)
 			healthbar.set_visible(true)
 			bossName.set_visible(true)
 			$BossMusic.play()

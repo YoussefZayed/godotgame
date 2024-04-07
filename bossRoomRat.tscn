@@ -58,4 +58,5 @@ position = Vector2(3210, -1500)
 [node name="Marker2D8" type="Marker2D" parent="ratSpawnLocations"]
 position = Vector2(3210, -1200)
 
+[connection signal="ratBossMove" from="Paths/BossPath/BossFollower/RatBoss" to="Paths" method="_on_rat_boss_rat_boss_move"]
 [connection signal="spawnRats" from="Paths/BossPath/BossFollower/RatBoss" to="." method="_on_rat_boss_spawn_rats"]

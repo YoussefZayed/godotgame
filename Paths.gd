@@ -13,3 +13,8 @@ func _ready():
 func _process(delta):
 	if activate == true:
 		bossFollower.progress += bossSpeed * delta
+
+
+func _on_rat_boss_rat_boss_move(speed):
+	activate = true
+	bossSpeed = speed
