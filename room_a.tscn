@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b62i5odp8bp7"]
+[gd_scene load_steps=28 format=3 uid="uid://b62i5odp8bp7"]
 
 [ext_resource type="Texture2D" uid="uid://dj2py6pcc8o1k" path="res://all art/other - emily/wasd.png" id="1_ctxr4"]
 [ext_resource type="Script" path="res://room_a.gd" id="1_f5din"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dn5jvc5bb8bbs" path="res://all art/other - emily/rkey.png" id="2_5egk6"]
 [ext_resource type="Texture2D" uid="uid://dav58crkbvgp4" path="res://all art/other - emily/mouseclick.png" id="2_wtr7h"]
 [ext_resource type="PackedScene" uid="uid://0rx5ejynu07n" path="res://bossRoomRat.tscn" id="3_2sgw7"]
+[ext_resource type="Texture2D" uid="uid://ceyw6w1rdiqml" path="res://all art/assets - charles/mouse-pointer.png" id="4_ba6i1"]
 [ext_resource type="FontFile" uid="uid://bwobog63u2xa5" path="res://all art/Fonts/PeaberryBase.ttf" id="4_grds1"]
 [ext_resource type="Script" path="res://SpawningA.gd" id="5_idi17"]
 [ext_resource type="PackedScene" uid="uid://cyc2xge3qnmw3" path="res://ratenemy.tscn" id="6_0vi4b"]
@@ -9968,6 +9969,14 @@ offset_top = 844.0
 offset_right = 763.0
 offset_bottom = 884.0
 texture = ExtResource("2_5egk6")
+expand_mode = 1
+
+[node name="RKeyTexture2" type="TextureRect" parent="."]
+offset_left = 759.0
+offset_top = 840.0
+offset_right = 810.0
+offset_bottom = 889.0
+texture = ExtResource("4_ba6i1")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
