@@ -9,7 +9,7 @@ var isDead = false
 var player_chase = false
 var started = false
 signal spawnRats(player)
-signal ratBossMove(sp)
+signal ratBossMove(act, sp)
 
 @export var ruby = preload("res://ruby.tscn")
 @export var pick_up = preload("res://pick_up_power_point.tscn")
@@ -53,7 +53,7 @@ func spawnPickUp():
 
 func die():
 	isDead = true
-	get_tree().root.get_node("/root/Main/RoomA/BossRoomRat/Paths").activate = false
+	emit_signal("ratBossMove", false, speed)
 	$EnemyDeath.play()
 	$BossMusic.stop()
 	$CollisionShape2D.set_deferred("disabled", true)
@@ -62,7 +62,6 @@ func die():
 	spawnRuby()
 	spawnPickUp()
 	self.queue_free()
-	print("Queue freed")
 
 func _on_hurt_area_entered(area):
 	if (isDead):
@@ -91,13 +90,12 @@ func _on_spawn_rats_timeout():
 		$spawnRats.start(timer_secs * (health/1000) + 1)
 		emit_signal("spawnRats", player)
 
-
 func _on_detection_area_body_entered(body):
 	if body is Player && started:
 		player = body
 		player_chase = true
 		if (!bossBattle):
-			emit_signal("ratBossMove", speed)
+			emit_signal("ratBossMove", true, speed)
 			healthbar.set_visible(true)
 			bossName.set_visible(true)
 			$BossMusic.play()

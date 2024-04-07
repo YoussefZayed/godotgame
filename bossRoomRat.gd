@@ -3,7 +3,8 @@ signal spawnDoor()
 
 @export var ratEnemy: PackedScene
 
-
+func _ready():
+	$Paths/BossPath/BossFollower/RatBoss.ratBossMove.connect($Paths._on_rat_boss_rat_boss_move)
 
 func _on_rat_boss_spawn_rats(player):
 	print("Spwaning Rats")

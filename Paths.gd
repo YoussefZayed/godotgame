@@ -15,6 +15,6 @@ func _process(delta):
 		bossFollower.progress += bossSpeed * delta
 
 
-func _on_rat_boss_rat_boss_move(speed):
-	activate = true
+func _on_rat_boss_rat_boss_move(active, speed):
+	activate = active
 	bossSpeed = speed
